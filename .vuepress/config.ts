@@ -125,6 +125,18 @@ export default defineConfig({
     ['social-share', {
       networks: ['qq', 'wechat', 'twitter'],
     }],
+    // 评论区
+    // https://xxholly32.github.io/vuepress-plugin-gitalk-maker/guide/#%E7%94%A8%E6%B3%95
+    ['gitalk-maker', {
+      gitalkConfig: {
+        clientID: 'Ov23ctuxNxQU3HQDEW8K',
+        clientSecret: '473724b1a1a75a3ede07928dd09135a6adc999a1',
+        repo: 'wml107.github.io',
+        owner: 'wml107',
+        admin: ['wml107'],
+        distractionFreeMode: false, // Facebook-like distraction free mode
+      },
+    },]
   ],
   // 主题配置
   themeConfig: {
