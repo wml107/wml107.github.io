@@ -135,6 +135,7 @@ export default defineConfig({
         owner: 'wml107',
         admin: ['wml107'],
         distractionFreeMode: false, // Facebook-like distraction free mode
+        id: 'Blog Comment',
       },
     },]
   ],
