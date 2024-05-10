@@ -112,6 +112,19 @@ export default defineConfig({
     ],
     // https://github.com/tolking/vuepress-plugin-img-lazy
     ["img-lazy"],
+    // 进度条
+    // https://github.com/tolking/vuepress-plugin-reading-progress
+    ["reading-progress", {
+      readingDir: /[^/]+$/
+    }],
+    // 建议阅读时间
+    // https://github.com/darrenjennings/vuepress-plugin-reading-time
+    ['vuepress-plugin-reading-time'],
+    // 分享插件
+    // https://github.com/ntnyq/vuepress-plugin-social-share/blob/v1/docs/guide/README.md
+    ['social-share', {
+      networks: ['qq', 'wechat', 'twitter'],
+    }],
   ],
   // 主题配置
   themeConfig: {
