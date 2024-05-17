@@ -136,7 +136,7 @@ export default defineConfig({
         owner: 'wml107',
         admin: ['wml107'],
       },
-    },]
+    }],
   ],
   // 主题配置
   themeConfig: {
