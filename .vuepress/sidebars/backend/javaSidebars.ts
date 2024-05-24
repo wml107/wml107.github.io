@@ -6,7 +6,7 @@ export default [
       children: [
         "基础语法.md",
         "面向对象.md",
-        "包｜Java程序的组织.md",
+        "Java程序的组织｜包.md",
       ],
       sidebarDepth: 4
     },
