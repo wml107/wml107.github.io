@@ -210,13 +210,13 @@ export default [
                 link: '/docs/PCDIY/ITX/',
             },
             {
-                text: "NAS",
-                link: '/docs/PCDIY/NAS/',
-            },
-            {
                 text: "路由器",
                 link: '/docs/PCDIY/路由器/',
             },
         ]
+    },
+    {
+        text: "NAS",
+        link: '/docs/nas/',
     },
 ] as NavItem[];
