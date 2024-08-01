@@ -102,6 +102,10 @@ export default [
                 text: "小程序",
                 link: '/docs/前端/小程序/',
             },
+            {
+                text: "实战经验",
+                link: '/docs/前端/practicalExperience/',
+            },
 
         ]
     },
