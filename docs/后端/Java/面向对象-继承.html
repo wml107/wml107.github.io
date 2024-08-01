@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>面向对象-继承 | 安得广厦千万间</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2675818a983a3131404cee835018f016";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    <meta name="description" content="我的博客，用于记录整理各类知识、想法、观点">
+    <meta property="article:modified_time" content="2024-06-06T08:34:23.000Z">
+    <meta property="og:site_name" content="安得广厦千万间">
+    <meta property="og:title" content="面向对象-继承">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://codefather.cn/docs/%E5%90%8E%E7%AB%AF/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BB%A7%E6%89%BF.html">
+    <meta name="twitter:title" content="面向对象-继承">
+    <meta name="twitter:url" content="https://codefather.cn/docs/%E5%90%8E%E7%AB%AF/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E7%BB%A7%E6%89%BF.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="程序员, 编程, 计算机, PC DIY, 客制化键盘">
+    <meta property="article:tag" content="程序员">
+    <meta name="keywords" content="编程学习路线, Java, 编程导航, 后端, 前端, 开发, 编程分享, 电脑DIY, ITX, 客制化键盘">
+    
+    <link rel="preload" href="/assets/css/0.styles.22c5eafc.css" as="style"><link rel="preload" href="/assets/js/app.8c86a408.js" as="script"><link rel="preload" href="/assets/js/4.5e4498eb.js" as="script"><link rel="preload" href="/assets/js/2.205724a6.js" as="script"><link rel="preload" href="/assets/js/36.74db5f6a.js" as="script"><link rel="preload" href="/assets/js/1.f4a8ed11.js" as="script"><link rel="prefetch" href="/assets/js/12.d74be1ed.js"><link rel="prefetch" href="/assets/js/13.4c995e70.js"><link rel="prefetch" href="/assets/js/14.63954ce0.js"><link rel="prefetch" href="/assets/js/15.243e50da.js"><link rel="prefetch" href="/assets/js/16.71827017.js"><link rel="prefetch" href="/assets/js/17.9a37b696.js"><link rel="prefetch" href="/assets/js/18.bd9decd1.js"><link rel="prefetch" href="/assets/js/19.8acfe60a.js"><link rel="prefetch" href="/assets/js/20.7df0290c.js"><link rel="prefetch" href="/assets/js/21.81018fd8.js"><link rel="prefetch" href="/assets/js/22.ea2e38e8.js"><link rel="prefetch" href="/assets/js/23.1aabb380.js"><link rel="prefetch" href="/assets/js/24.7d0135c8.js"><link rel="prefetch" href="/assets/js/25.a53b28e5.js"><link rel="prefetch" href="/assets/js/26.a3da17c3.js"><link rel="prefetch" href="/assets/js/27.225d89a9.js"><link rel="prefetch" href="/assets/js/28.7af2808a.js"><link rel="prefetch" href="/assets/js/29.7b2bb3fc.js"><link rel="prefetch" href="/assets/js/3.97550155.js"><link rel="prefetch" href="/assets/js/30.dd081834.js"><link rel="prefetch" href="/assets/js/31.bfd4bd03.js"><link rel="prefetch" href="/assets/js/32.75d882a4.js"><link rel="prefetch" href="/assets/js/33.45d42bde.js"><link rel="prefetch" href="/assets/js/34.abd4da33.js"><link rel="prefetch" href="/assets/js/35.3420b88f.js"><link rel="prefetch" href="/assets/js/37.41d7c30a.js"><link rel="prefetch" href="/assets/js/38.166c255b.js"><link rel="prefetch" href="/assets/js/39.b4ee3e3d.js"><link rel="prefetch" href="/assets/js/40.384d5478.js"><link rel="prefetch" href="/assets/js/5.d82f292c.js"><link rel="prefetch" href="/assets/js/6.ab76865b.js"><link rel="prefetch" href="/assets/js/7.51185879.js"><link rel="prefetch" href="/assets/js/8.9c1f91f4.js"><link rel="prefetch" href="/assets/js/9.aea7613d.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.82f3744c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.22c5eafc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="安得广厦千万间" class="logo"> <span class="site-name can-hide">安得广厦千万间</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基本功" class="dropdown-title"><span class="title">基本功</span> <span class="arrow down"></span></button> <button type="button" aria-label="基本功" class="mobile-dropdown-title"><span class="title">基本功</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机组成原理/" class="nav-link">
+  计算机组成原理
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/算法/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><h4>
+          基础工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Bash/" class="nav-link">
+  Bash
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Vim/" class="nav-link">
+  Vim
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/前端/HTML/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Axios/" class="nav-link">
+  Axios
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/工程化/" class="nav-link">
+  工程化
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React Native/" class="nav-link">
+  React Native
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Tailwind/" class="nav-link">
+  Tailwind
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/前端库/" class="nav-link">
+  前端库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/小程序/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/practicalExperience/" class="nav-link">
+  实战经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/后端/Java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/Spring/" class="nav-link">
+  Spring
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/DevOps/" class="nav-link">
+  DevOps
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="客制化键盘" class="dropdown-title"><span class="title">客制化键盘</span> <span class="arrow down"></span></button> <button type="button" aria-label="客制化键盘" class="mobile-dropdown-title"><span class="title">客制化键盘</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/科普扫盲/" class="nav-link">
+  科普扫盲
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/键帽/" class="nav-link">
+  键帽
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/套件/" class="nav-link">
+  套件
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/轴体/" class="nav-link">
+  轴体
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/配件周边/" class="nav-link">
+  配件周边
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="PC DIY" class="dropdown-title"><span class="title">PC DIY</span> <span class="arrow down"></span></button> <button type="button" aria-label="PC DIY" class="mobile-dropdown-title"><span class="title">PC DIY</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/PCDIY/综合/" class="nav-link">
+  综合
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/桌搭分享/" class="nav-link">
+  桌搭分享
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/CPU/" class="nav-link">
+  CPU
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/主板/" class="nav-link">
+  主板
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/内存/" class="nav-link">
+  内存
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显卡/" class="nav-link">
+  显卡
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/硬盘/" class="nav-link">
+  硬盘
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/散热/" class="nav-link">
+  散热
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/电源/" class="nav-link">
+  电源
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/机箱/" class="nav-link">
+  机箱
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/其他/" class="nav-link">
+  其他
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显示器/" class="nav-link">
+  显示器
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/ITX/" class="nav-link">
+  ITX
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/路由器/" class="nav-link">
+  路由器
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/nas/" class="nav-link">
+  NAS
+</a></div> <a href="https://github.com/wml107" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基本功" class="dropdown-title"><span class="title">基本功</span> <span class="arrow down"></span></button> <button type="button" aria-label="基本功" class="mobile-dropdown-title"><span class="title">基本功</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机组成原理/" class="nav-link">
+  计算机组成原理
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/算法/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><h4>
+          基础工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Bash/" class="nav-link">
+  Bash
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Vim/" class="nav-link">
+  Vim
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/前端/HTML/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Axios/" class="nav-link">
+  Axios
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/工程化/" class="nav-link">
+  工程化
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React Native/" class="nav-link">
+  React Native
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Tailwind/" class="nav-link">
+  Tailwind
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/前端库/" class="nav-link">
+  前端库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/小程序/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/practicalExperience/" class="nav-link">
+  实战经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/后端/Java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/Spring/" class="nav-link">
+  Spring
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/DevOps/" class="nav-link">
+  DevOps
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="客制化键盘" class="dropdown-title"><span class="title">客制化键盘</span> <span class="arrow down"></span></button> <button type="button" aria-label="客制化键盘" class="mobile-dropdown-title"><span class="title">客制化键盘</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/科普扫盲/" class="nav-link">
+  科普扫盲
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/键帽/" class="nav-link">
+  键帽
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/套件/" class="nav-link">
+  套件
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/轴体/" class="nav-link">
+  轴体
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/配件周边/" class="nav-link">
+  配件周边
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="PC DIY" class="dropdown-title"><span class="title">PC DIY</span> <span class="arrow down"></span></button> <button type="button" aria-label="PC DIY" class="mobile-dropdown-title"><span class="title">PC DIY</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/PCDIY/综合/" class="nav-link">
+  综合
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/桌搭分享/" class="nav-link">
+  桌搭分享
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/CPU/" class="nav-link">
+  CPU
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/主板/" class="nav-link">
+  主板
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/内存/" class="nav-link">
+  内存
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显卡/" class="nav-link">
+  显卡
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/硬盘/" class="nav-link">
+  硬盘
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/散热/" class="nav-link">
+  散热
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/电源/" class="nav-link">
+  电源
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/机箱/" class="nav-link">
+  机箱
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/其他/" class="nav-link">
+  其他
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显示器/" class="nav-link">
+  显示器
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/ITX/" class="nav-link">
+  ITX
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/路由器/" class="nav-link">
+  路由器
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/nas/" class="nav-link">
+  NAS
+</a></div> <a href="https://github.com/wml107" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/docs/%E5%90%8E%E7%AB%AF/Java/" aria-current="page" class="sidebar-link">Java —— 引言与综述</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Java</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/后端/Java/基础语法.html" class="sidebar-link">基础语法</a></li><li><a href="/docs/后端/Java/面向对象.html" class="sidebar-link">面向对象</a></li><li><a href="/docs/后端/Java/Java程序的组织｜包.html" class="sidebar-link">Java程序的组织</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="content"><div style="width:100%"><div class="theme-default-content custom-content content__default"><h1 id="面向对象-继承"><a href="#面向对象-继承" class="header-anchor">#</a> 面向对象-继承</h1> <p>继承的基本思想就是在已有类的基础上创建新的类，复用这些类的成员，添加新的方法和字段，使新类能够适应新的情况。</p> <p>具体例如经典游戏PvZ，植物是一类，僵尸是一类，所有的植物和僵尸，都具备一些最基础的特性：都存在一个生命值、具有攻击行为、需要阳光购买......那么在进行设计时，就可以先创建一个通用的Plant类，具备属性hp、firepower、price等属性，具备attack等方法，在这个类的基础上，再构建一系列具体的类，从而将重复的代码复用。例如植物向日葵就还会具备产生阳光的方法、不同植物的攻击力firepower不同、不同植物调用attack产生的动画特效不同......</p> <p>在这种继承关系中，被继承的这个类，称为超类superclass、基类base class、父类parent class，继承别的类的类称为子类subclass、派生类derived class、孩子类child class。它们之间的关系为“是(is-a)”的关系。</p> <h2 id="定义子类-继承"><a href="#定义子类-继承" class="header-anchor">#</a> 定义子类/继承</h2> <p>通过关键字<code>extends</code>关键字，基于某个类，以他为父类，定义他的子类。</p> <p>只能专门定义子类，被继承的这个类自动成为这一关系中的父类，不能定义某个子类的父类，先有父后有子不能反过来。</p> <p>定义子类就是在常规的定义类语法的基础上，在类名后加上<code>extends 父类名</code>。例如：</p> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">Public</span> <span class="token keyword">class</span> <span class="token class-name">Manager</span> entends <span class="token class-name">Employee</span> <span class="token punctuation">{</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>花括号里面的内容和定义类相比，并没有什么特别之处。</p> <p>这样定义的子类，能够继承父类的成员。这包括静态成员，但静态代码块、构造代码块都没办法被继承，它们算不上类的成员。</p> <ul><li>正如静态成员的定义，他是属于类本身的，所以哪怕静态属性被继承了，在子类这用的还是父类的，它们共用的是同一块存储空间。子类对其所继承的静态属性的改动，会反映在父类上。</li></ul> <p>尽管没有特别声明父类成员，但可以在子类的对象上使用父类中的成员，访问方式和前面章节提到的访问类成员的方式完全一样。这样一来就只需要指出子类与超类的不同之处。</p> <p>设计类的时候将最一般的功能放在超类中，将更特殊的功能放在子类中。</p> <h2 id="所继承内容的可见性-受保护访问"><a href="#所继承内容的可见性-受保护访问" class="header-anchor">#</a> 所继承内容的可见性——受保护访问</h2> <p>前面章节介绍访问权限修饰符的时候已经介绍过，这里重提作简单回顾：通过protected关键字，将成员的访问权限控制在包内和继承链内。</p> <p>访问权限修饰符只是控制能否访问，该继承还是要继承的，也就是说你用private声明的成员和用protected声明的成员，都会被子类继承，存在于子类对象内，只不过private声明的成员没办法通过子类访问而已。这些私有成员仍然是子类型对象的一部分，实例化的时候JVM也需要为这些私有属性分配内存空间、初始化值（具体如何做见后文“子类构造器”部分），如果是希望阻止成员被继承，要使用后文介绍的<code>final</code>关键字。</p> <h2 id="覆盖方法"><a href="#覆盖方法" class="header-anchor">#</a> 覆盖方法</h2> <p>除了在子类中添加父类没有的属性、方法，有些父类的方法对子类不见得适用，或者子类需要让这些方法执行的内容更具体。</p> <p>通过在子类中定义和父类方法签名一样的方法，来将父类的这个方法覆盖(override)掉，这样在对子类对象调用这个方法时，用的就是子类的。</p> <hr> <p><strong>覆盖时调用父类同名方法：</strong></p> <p>Java还提供了关键字<code>super</code>让你能够在覆盖方法内调用父类原本的方法，即在执行原方法流程的基础上增加内容，定义新的覆盖方法。通过<code>super.方法名</code>来使用。</p> <p>super并不是像this一样对某个对象的引用，它只是一个指示编译器要调用超类方法的一个特殊关键字，不能通过super访问父类属性、也不能将super赋值给某个对象变量。</p> <hr> <p><strong>限制：</strong></p> <ul><li>可见性方面的限制：
+<ul><li>覆盖也是访问的一种，所以对于那些private权限的方法，虽然继承了，但是不能覆盖，不能够出现方法签名和父类private权限方法一样的方法。</li> <li>覆盖时，子类方法的可见性不能低于父类的，要么访问权限比父方法大，要么维持一致。</li></ul></li> <li>返回值方面的限制：覆盖/和父类方法签名相同时，方法的类型，即返回值的类型，必须属于父类方法返回值类型。即返回值类型一致或为子类。</li> <li>抛出异常方面的限制：和上一条类似，覆盖/和父类方法签名相同时，如果是抛出编译时异常，不能抛出比被覆盖方法更多的编译时异常，即抛出的异常只能是父类对应方法所抛出的某个异常的子类或为同一个类，也可以不抛出异常；运行时异常没有这样的限制。【有关什么是异常见后面的章节。</li> <li>方法类型方面的限制：被覆盖的方法必须为实例方法。
+<ul><li>静态成员它们都是属于类的，虽然能被继承，但没办法被覆盖，不过你依然可以在子类定义一个方法签名和父类一样的方法，不过这样做法的实际效果是子类的静态方法隐藏了父类的，而非覆盖，只是效果上像。它们具体的区别主要体现在向上转型上，这一点在下文介绍继承链上类的类型转换时会详细展开讲。</li> <li>并且，父类和子类不能出现两个同样签名的方法，一个带static一个不带、一个是实例方法一个是类方法，这会导致报错。</li></ul></li></ul> <h2 id="覆盖属性"><a href="#覆盖属性" class="header-anchor">#</a> 覆盖属性</h2> <p>属性也是可以被覆盖的，可以在子类中定义与父类名称相同的属性，以此来覆盖掉改名称在父类中的各种情形：默认值、类型、是否为常量。</p> <p>覆盖属性也有类似前文“覆盖方法限制”中第1、4条的限制。</p> <h2 id="子类构造器"><a href="#子类构造器" class="header-anchor">#</a> 子类构造器</h2> <blockquote><p>构造方法本质也是方法，也能被继承，不过父类和子类属性都不一样，子类是以一种不同于上面的形式继承的构造函数。</p></blockquote> <p>子类的构造函数中可以通过<code>super</code>关键字调用父类的构造函数，形式很类似用this关键字调用当前类的构造函数，直接使用super，把它当成方法名即可。</p> <ul><li>子类构造器内如果不调用父类，编译器就会自动给它在一开始添加一个父类的无参构造器调用：<code>super();</code>，要是父类没有，就会报错。</li> <li>子类构造器内调用父构造器，除了复用代码，快速初始化一些父类的属性之外，还有一个必须存在的理由：父类中private权限的属性子类只是能继承，但不能在子类内访问，需要通过父类方法访问，这就必须通过父类构造器初始化。</li></ul> <h2 id="阻止继承"><a href="#阻止继承" class="header-anchor">#</a> 阻止继承</h2> <p>当设计者不希望某个类被扩展、被其他的类继承时，使用<code>final</code>关键字。</p> <ul><li><p>在定义类时，class关键字前加final，就可以使这个类无法被继承。</p></li> <li><p>定义类方法时，function关键字前加final，就可以使这个方法无法被覆盖重写。</p></li> <li><p>类属性的继承无法被阻止，类的所有属性一定会被它的子类所继承。</p> <blockquote><p>属性加final字段是用来声明其为常量的。</p></blockquote></li></ul></div> <footer class="page-edit" style="margin:0;"><!----> <div class="last-updated"><span class="prefix">最近更新:</span> <span class="time">6/6/2024, 8:34:23 AM</span></div></footer> <!----></div></div>  <main class="footer"> <div class="copy-right"><a target="_blank" rel="noreferrer">
+          
+        </a></div></main></main> <aside class="page-sidebar"> <div class="page-side-toolbar"></div>  </aside></div><div class="global-ui"><!----><!----><!----><div></div></div></div>
+    <script src="/assets/js/app.8c86a408.js" defer></script><script src="/assets/js/4.5e4498eb.js" defer></script><script src="/assets/js/2.205724a6.js" defer></script><script src="/assets/js/36.74db5f6a.js" defer></script><script src="/assets/js/1.f4a8ed11.js" defer></script>
+  </body>
+</html>

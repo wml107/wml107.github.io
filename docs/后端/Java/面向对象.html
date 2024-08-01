@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>面向对象 | 安得广厦千万间</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2675818a983a3131404cee835018f016";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    <meta name="description" content="我的博客，用于记录整理各类知识、想法、观点">
+    <meta property="article:modified_time" content="2024-06-06T08:34:23.000Z">
+    <meta property="og:site_name" content="安得广厦千万间">
+    <meta property="og:title" content="面向对象">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://codefather.cn/docs/%E5%90%8E%E7%AB%AF/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html">
+    <meta name="twitter:title" content="面向对象">
+    <meta name="twitter:url" content="https://codefather.cn/docs/%E5%90%8E%E7%AB%AF/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="程序员, 编程, 计算机, PC DIY, 客制化键盘">
+    <meta property="article:tag" content="程序员">
+    <meta name="keywords" content="编程学习路线, Java, 编程导航, 后端, 前端, 开发, 编程分享, 电脑DIY, ITX, 客制化键盘">
+    
+    <link rel="preload" href="/assets/css/0.styles.22c5eafc.css" as="style"><link rel="preload" href="/assets/js/app.8c86a408.js" as="script"><link rel="preload" href="/assets/js/4.5e4498eb.js" as="script"><link rel="preload" href="/assets/js/2.205724a6.js" as="script"><link rel="preload" href="/assets/js/37.41d7c30a.js" as="script"><link rel="preload" href="/assets/js/1.f4a8ed11.js" as="script"><link rel="prefetch" href="/assets/js/12.d74be1ed.js"><link rel="prefetch" href="/assets/js/13.4c995e70.js"><link rel="prefetch" href="/assets/js/14.63954ce0.js"><link rel="prefetch" href="/assets/js/15.243e50da.js"><link rel="prefetch" href="/assets/js/16.71827017.js"><link rel="prefetch" href="/assets/js/17.9a37b696.js"><link rel="prefetch" href="/assets/js/18.bd9decd1.js"><link rel="prefetch" href="/assets/js/19.8acfe60a.js"><link rel="prefetch" href="/assets/js/20.7df0290c.js"><link rel="prefetch" href="/assets/js/21.81018fd8.js"><link rel="prefetch" href="/assets/js/22.ea2e38e8.js"><link rel="prefetch" href="/assets/js/23.1aabb380.js"><link rel="prefetch" href="/assets/js/24.7d0135c8.js"><link rel="prefetch" href="/assets/js/25.a53b28e5.js"><link rel="prefetch" href="/assets/js/26.a3da17c3.js"><link rel="prefetch" href="/assets/js/27.225d89a9.js"><link rel="prefetch" href="/assets/js/28.7af2808a.js"><link rel="prefetch" href="/assets/js/29.7b2bb3fc.js"><link rel="prefetch" href="/assets/js/3.97550155.js"><link rel="prefetch" href="/assets/js/30.dd081834.js"><link rel="prefetch" href="/assets/js/31.bfd4bd03.js"><link rel="prefetch" href="/assets/js/32.75d882a4.js"><link rel="prefetch" href="/assets/js/33.45d42bde.js"><link rel="prefetch" href="/assets/js/34.abd4da33.js"><link rel="prefetch" href="/assets/js/35.3420b88f.js"><link rel="prefetch" href="/assets/js/36.74db5f6a.js"><link rel="prefetch" href="/assets/js/38.166c255b.js"><link rel="prefetch" href="/assets/js/39.b4ee3e3d.js"><link rel="prefetch" href="/assets/js/40.384d5478.js"><link rel="prefetch" href="/assets/js/5.d82f292c.js"><link rel="prefetch" href="/assets/js/6.ab76865b.js"><link rel="prefetch" href="/assets/js/7.51185879.js"><link rel="prefetch" href="/assets/js/8.9c1f91f4.js"><link rel="prefetch" href="/assets/js/9.aea7613d.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.82f3744c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.22c5eafc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="安得广厦千万间" class="logo"> <span class="site-name can-hide">安得广厦千万间</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基本功" class="dropdown-title"><span class="title">基本功</span> <span class="arrow down"></span></button> <button type="button" aria-label="基本功" class="mobile-dropdown-title"><span class="title">基本功</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机组成原理/" class="nav-link">
+  计算机组成原理
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/算法/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><h4>
+          基础工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Bash/" class="nav-link">
+  Bash
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Vim/" class="nav-link">
+  Vim
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/前端/HTML/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Axios/" class="nav-link">
+  Axios
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/工程化/" class="nav-link">
+  工程化
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React Native/" class="nav-link">
+  React Native
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Tailwind/" class="nav-link">
+  Tailwind
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/前端库/" class="nav-link">
+  前端库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/小程序/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/practicalExperience/" class="nav-link">
+  实战经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/后端/Java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/Spring/" class="nav-link">
+  Spring
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/DevOps/" class="nav-link">
+  DevOps
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="客制化键盘" class="dropdown-title"><span class="title">客制化键盘</span> <span class="arrow down"></span></button> <button type="button" aria-label="客制化键盘" class="mobile-dropdown-title"><span class="title">客制化键盘</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/科普扫盲/" class="nav-link">
+  科普扫盲
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/键帽/" class="nav-link">
+  键帽
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/套件/" class="nav-link">
+  套件
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/轴体/" class="nav-link">
+  轴体
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/配件周边/" class="nav-link">
+  配件周边
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="PC DIY" class="dropdown-title"><span class="title">PC DIY</span> <span class="arrow down"></span></button> <button type="button" aria-label="PC DIY" class="mobile-dropdown-title"><span class="title">PC DIY</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/PCDIY/综合/" class="nav-link">
+  综合
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/桌搭分享/" class="nav-link">
+  桌搭分享
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/CPU/" class="nav-link">
+  CPU
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/主板/" class="nav-link">
+  主板
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/内存/" class="nav-link">
+  内存
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显卡/" class="nav-link">
+  显卡
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/硬盘/" class="nav-link">
+  硬盘
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/散热/" class="nav-link">
+  散热
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/电源/" class="nav-link">
+  电源
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/机箱/" class="nav-link">
+  机箱
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/其他/" class="nav-link">
+  其他
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显示器/" class="nav-link">
+  显示器
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/ITX/" class="nav-link">
+  ITX
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/路由器/" class="nav-link">
+  路由器
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/nas/" class="nav-link">
+  NAS
+</a></div> <a href="https://github.com/wml107" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基本功" class="dropdown-title"><span class="title">基本功</span> <span class="arrow down"></span></button> <button type="button" aria-label="基本功" class="mobile-dropdown-title"><span class="title">基本功</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机组成原理/" class="nav-link">
+  计算机组成原理
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/算法/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><h4>
+          基础工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Bash/" class="nav-link">
+  Bash
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Vim/" class="nav-link">
+  Vim
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/前端/HTML/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Axios/" class="nav-link">
+  Axios
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/工程化/" class="nav-link">
+  工程化
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React Native/" class="nav-link">
+  React Native
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Tailwind/" class="nav-link">
+  Tailwind
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/前端库/" class="nav-link">
+  前端库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/小程序/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/practicalExperience/" class="nav-link">
+  实战经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/后端/Java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/Spring/" class="nav-link">
+  Spring
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/DevOps/" class="nav-link">
+  DevOps
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="客制化键盘" class="dropdown-title"><span class="title">客制化键盘</span> <span class="arrow down"></span></button> <button type="button" aria-label="客制化键盘" class="mobile-dropdown-title"><span class="title">客制化键盘</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/科普扫盲/" class="nav-link">
+  科普扫盲
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/键帽/" class="nav-link">
+  键帽
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/套件/" class="nav-link">
+  套件
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/轴体/" class="nav-link">
+  轴体
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/配件周边/" class="nav-link">
+  配件周边
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="PC DIY" class="dropdown-title"><span class="title">PC DIY</span> <span class="arrow down"></span></button> <button type="button" aria-label="PC DIY" class="mobile-dropdown-title"><span class="title">PC DIY</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/PCDIY/综合/" class="nav-link">
+  综合
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/桌搭分享/" class="nav-link">
+  桌搭分享
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/CPU/" class="nav-link">
+  CPU
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/主板/" class="nav-link">
+  主板
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/内存/" class="nav-link">
+  内存
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显卡/" class="nav-link">
+  显卡
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/硬盘/" class="nav-link">
+  硬盘
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/散热/" class="nav-link">
+  散热
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/电源/" class="nav-link">
+  电源
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/机箱/" class="nav-link">
+  机箱
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/其他/" class="nav-link">
+  其他
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显示器/" class="nav-link">
+  显示器
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/ITX/" class="nav-link">
+  ITX
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/路由器/" class="nav-link">
+  路由器
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/nas/" class="nav-link">
+  NAS
+</a></div> <a href="https://github.com/wml107" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/docs/%E5%90%8E%E7%AB%AF/Java/" aria-current="page" class="sidebar-link">Java —— 引言与综述</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Java</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/后端/Java/基础语法.html" class="sidebar-link">基础语法</a></li><li><a href="/docs/后端/Java/面向对象.html" class="active sidebar-link">面向对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#基本概念" class="sidebar-link">基本概念</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#类与对象" class="sidebar-link">类与对象</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#预定义类" class="sidebar-link">预定义类</a></li></ul></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#基本语法" class="sidebar-link">基本语法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#类的定义" class="sidebar-link">类的定义</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#类的实例化-对象的创建" class="sidebar-link">类的实例化/对象的创建</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#对象-成员-的使用" class="sidebar-link">对象(成员)的使用</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#方法" class="sidebar-link">方法</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#访问权限修饰符" class="sidebar-link">访问权限修饰符</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#构造函数-构造器" class="sidebar-link">构造函数/构造器</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#final实例字段" class="sidebar-link">final实例字段</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#静态成员-类成员" class="sidebar-link">静态成员/类成员</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#总结-java中的变量种类" class="sidebar-link">总结：Java中的变量种类</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/面向对象.html#java程序的入口-main方法" class="sidebar-link">Java程序的入口 —— main方法</a></li></ul></li></ul></li><li><a href="/docs/后端/Java/Java程序的组织｜包.html" class="sidebar-link">Java程序的组织</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="content"><div style="width:100%"><div class="theme-default-content custom-content content__default"><h1 id="面向对象"><a href="#面向对象" class="header-anchor">#</a> 面向对象</h1> <blockquote><p>面向对象与面向过程：</p> <p>传统的程序设计通过设计一系列过程来求解问题，Pascal语言语言的设计者Niklaus Wirth所提出的“程序=算法+数据结构”是这种思想的体现，算法是第一位的，数据结构是第二位，先确定如何操作、处理数据，再决定组织数据的结构。这种组织程序方式的典型就是C语言，由一个个函数调用组成。</p> <p>而OOP（object-oriented programming）调换了这个次序，程序由对象组成，将数据放在第一位，然后再考虑操作数据的算法。这一思想的典型是Java。</p> <p>对一些规模较小的问题而言，面向过程比较快捷方便，是理想选择。面向对象更适合解决规模较大的问题，这种更加结构化的代码能使程序更易读、更易维护、更快的发现问题。</p> <p>不过现在许多语言为了其灵活性、表达能力，同时支持多种编程范式，供开发者根据需要灵活使用，例如C++、Javascript，既可以编写面向对象风格的程序，也可以面向过程；
+<br>除此之外，编程范式也不止这两种，还有很多其他的编程范式：泛型、函数式(它和面向过程不是一个东西)、事件驱动等。</p></blockquote> <h2 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h2> <h3 id="类与对象"><a href="#类与对象" class="header-anchor">#</a> 类与对象</h3> <p>上一章介绍数据类型时只介绍了基本类型，Java数据类型的另一大类就是<strong>引用类型</strong>，就是类，也可以叫封装类型、自定义类型、复合数据类型。</p> <p><strong>两者关系</strong>：</p> <ul><li>类是构建对象的模板，对象由类创建，其数据类型上属于某个类。</li> <li>你可以理解为前面基本类型中，类型与变量的关系。对象就是这种类型具体的值、承载具体内容，而类则标识这到底是怎样一种数据，标识其类别。</li></ul> <p>由类构造对象的过程，称为类的<strong>实例化</strong>，创建出来的对象称为这个类的<strong>实例</strong>。【所以对象和实例说的基本是一回事，只不过语境不同</p> <p>类，或者说对象，他们内部主要由两部分成员<strong>构成</strong>：属性和方法。</p> <ul><li><p><strong>属性</strong>用来存储这个对象的一些<strong>状态</strong>、数据，可以是基本类型、也可以是类。</p> <p>类中声明了这些数据的类型，根据类创建的对象存储具体值。</p> <p>也叫<strong>字段</strong>field。</p> <p>其实就是变量(你可以这么理解，但不能反着说，变量更广义一些，比如函数中定义的一些数据，这种才是真正的变量)。</p></li> <li><p><strong>方法</strong>就是这个类的<strong>行为</strong>，标识着它可以做些什么，这是一段可执行程序，是个过程。</p> <p>其实就是函数，如果你学过C语言之类的，你把它理解成函数就好了，这俩是一个东西，Java中没有独立存在的函数，都是依附于类，以方法的形式作为其成员。</p></li></ul> <p><strong>引用：</strong></p> <p>不同于上一章基本类型里提到的变量，当变量为对象时，变量所标识的东西，或者说变量所指向的内存位置存储的数据，不是这个对象的数据，而是一个内存地址。这个地址指向对象数据在内存中真正存储的位置。我们将这个内存地址/变量，称为该对象的引用。</p> <p>使用这个对象时使用的其实是这个引用，程序会根据引用找到这个对象的实际位置，通过引用间接访问对象成员。</p> <p>也就是说，对象的值并不是这个对象实际的内容/数据，对象这种特殊变量的值是个引用(你也可以理解成内存地址)。</p> <ul><li><p>对于基本类型的变量，创建一个变量a，用字面量给他初始化一个值后，再创建另一个变量b，将a的值赋值给b，其实际效果是在内存中开辟了两个区域，分别存储a、b两个变量，虽然他们的值一样，但他们各是各的；</p></li> <li><p>对于引用类型的变量，创建一个对象a，给他一个初始值后，再创建另一个对象b，将a的值赋值给b，其实际效果是内存中开辟了两个区域，分别存储对象a、b的引用，两者依旧各是各的，只是值一样。但由于他们的值是引用类型，实际指向的对象是一个对象，这个过程中，只开辟了一个区域，对象的具体内容/数据始终都是创建a时的那一份。将a初始化赋值给b的过程中，并没有新的实例被创建，只是新创建了一个对象类型的变量。操作变更对象a的属性后，访问对象b的该属性，拿到值是变更后的。</p></li></ul> <p>即通过赋值语法复制一个引用类型的变量，实际只是复制了对象的引用，对象本身并没有复制，如果希望复制创建一个全新的对象，需要用到一些拷贝对象的途径。这一点后面再介绍。</p> <p>这一段抽象的概念或许有些难以理解，需要你结合后面对象相关的具体语法，以及如何拷贝对象来理解。这里对于初学者难以理解的点在于把握“对象”这一词汇具备双重含义：</p> <ol><li>在内存中存储着的、实际的对象内容、数据。</li> <li>一种特殊的变量，值为指向一个类实例的引用/地址。但在使用这一词时却不会区分，像在介绍引用这一概念之前，前文提到的对象指的都是第一重含义，即对象的具体内容。所以理解这件事儿的关键就在于结合语境判断导致指的是实际内容，还是引用。</li></ol> <p>对于编译器、或者说Java语法规范而言，使用对象变量(的成员)时使用的是其背后实际对象的值；而在变量赋值、作为函数参数值传递(其实这本质也是赋值)这类将其单纯视为变量，使用其本身值的时候，使用的是引用。</p> <blockquote><p>Java这一点和C++有很大的不同，C++里引用(/指针)就是引用，对象就是对象，对象类型的变量指的永远都是实际对象的数据，其引用/地址则是该类型的指针，想通过其指针/引用访问对象内容要先通过专门的解引用运算符拿到实际指向的内容才行。</p> <p>而Java没把他们拆开，两者是一回事儿，要结合具体的用法来判断。对象类型的变量到底指什么，取决于以何种方式使用它。</p></blockquote> <p><strong>总结：</strong></p> <p>类就是类型，和前面基本类型int、char这些一样，只不过是一种自定义的类型。</p> <p>对象就是类型为这种自定义类的数据。</p> <p>对象变量，或者说类类型的变量的值不是对象本身，而是指向对象的引用，可以类比前面基本类型的数值、字面量。</p> <p>对象具有行为和状态。</p> <ul><li>行为通过可调用的方法/函数定义，代表了这类对象的能力，可以做什么、完成什么操作。
+<br>一个类的所有对象实例有着同样的行为，他们的方法都是共用的，都是来自于创建他们的类，而不像状态，每个对象都有一份自己的存着；</li> <li>状态保存着描述对象当前状态的信息。</li></ul> <p>对象的标识/引用：状态无法完全描述一个对象，状态值完全一样的两个对象不见的相同，这就像两个int类型的变量a和b，尽管他们的值都是3例如，但他们各是各的，只是值一样。每个对象都有一个唯一标识，这个标识就是对象的引用，它们指向不同的对象。</p> <blockquote><p>严格意义上讲，我们应当准确地称这种变量为类类型变量，或者引用类型变量。但实际一般说成是对象类型变量，但这么说也成立，此‘类型’非彼‘类型’，前面讲的类型，指的是Java数据类型术语语境下的。‘对象类型’这个‘类型’指的是说这种变量的类别属于对象，算是字面意思吧。</p></blockquote> <p><strong>null引用</strong></p> <p>对象类型的变量值都是引用，我们几乎不直接使用其值本身（也几乎接触不到），但有一种例外，该类型变量有一个可以以字面量、以值的形式出现的特殊值：<code>null</code>。</p> <p>null表示空，标识这是一个空引用，没有指向任何实际的对象。他的类型是引用类型，但也仅此而已。</p> <h3 id="预定义类"><a href="#预定义类" class="header-anchor">#</a> 预定义类</h3> <p>类又可以分成两种，一种是开发人员自行根据需要编写的<strong>自定义类</strong>，一种是由Java预先提供，成为了语言标准、语法的一部分，为<strong>预定义类</strong>，这些预定义类通常比基本类型复杂，需要用类实现，用于解决某类普遍问题，例如处理时间的Date和LocalDate、用于数学计算的Math、字符串String、数组Array、枚举Enum、处理文件读写的File类、用于网络编程的Socket类等等。</p> <p>预定义类在实现上还可以再分成两种，</p> <ul><li>一种在实现上和你自己定义的类没有任何区别，完全用Java语法实现，你能看得到他的实现、构成，就是Java替你封装好的一些工具类，方便你直接使用。例如Java的各种集合类，他封装了一系列典型的数据结构和算法在里面，方便你直接基于此来组织数据；</li> <li>还有一部分预定义类，虽然他在使用上，和普通的类没有任何区别，类语法规定怎样使用，他就怎样使用。但是你看不到他的内部构成，或者说它底层根本就不是通过Java实现的，它只是以类的形式向你提供一些Java语言的某种能力，例如处理网络请求、文件读写。这种也不可能通过Java语言本身实现，这种类是直接被编译器、JVM原生支持，以更底层的方式实现的，实现级别不在Java。</li></ul> <p>预定义类也可以称为内置类等。</p> <h2 id="基本语法"><a href="#基本语法" class="header-anchor">#</a> 基本语法</h2> <p>前面一节是从概念上，比较抽象地介绍类，这一节介绍编写、使用一个类所需的最基本语法。</p> <h3 id="类的定义"><a href="#类的定义" class="header-anchor">#</a> <strong>类的定义</strong></h3> <p>类的最简单定义形式如下</p> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">class</span> <span class="token class-name">ClassName</span><span class="token punctuation">{</span>
+	field1
+	field2
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	constructor1
+	constructor2
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+	method1
+	method2
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>这里面ClassName的位置是类的名字，就像int、float一样，类名的命名规则遵照前面提到的标识符命名方法。除此之外Java规定所有的类名第一个字符必须为大写字母开头。类名使用驼峰命名法（这一点不是语法规范的强制要求，但几乎没有例外）。</p> <p>类名前面的<code>class</code>是关键字，标识这里是一个类的定义/声明。</p> <p>field处就是类的字段/属性/状态，定义类属性的方式，和前面提到的定义变量的语句一样。</p> <p>constructor的位置是类的构造器/构造函数/构造方法，他用于创建一个类的对象，指示遵照何种规则实例化、如何创建该类型对象。有关构造函数的部分后文将详细展开。</p> <p>method的位置就是类的方法/函数。</p> <p>这三者的顺序是任意的，先写谁、混着写，都无所谓，语法没有做任何要求，只是一般会这样写，比较符合逻辑、易读。</p> <h3 id="类的实例化-对象的创建"><a href="#类的实例化-对象的创建" class="header-anchor">#</a> <strong>类的实例化/对象的创建</strong></h3> <p>这一过程你可以类比创建某一基本类型的变量。</p> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">ClassName</span> classNameObj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>这和基本类型的语法基本是一致的，先声明变量类型，然后是对象名称，命名规则遵循前面提到的标识符命名，不同的是初始化时不能像基本类型那样直接给个字面量，要以构造函数的形式创建一个对象。</p> <p><code>new</code>关键字+<code>类名()</code>的形式表示创建一个该类型的对象，通过这种方式调用构造函数，在调用处返回创造出的对象引用。最终用过赋值语句将对象引用赋值给对象。</p> <p>同样的，像前面基本类型提到的诸多关于变量的操作这里都是同理：</p> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//只声明不初始化，声明创建多个对象</span>
+<span class="token class-name">ClassName</span> classNameObj1<span class="token punctuation">,</span> classNameObj2；
+<span class="token comment">//声明之后再初始化、赋值</span>
+classNameObj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">className</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//赋值，上一种是创建一个对象赋值，类比基本类型的字面量赋值；</span>
+<span class="token comment">//也可以拿对象给另一个对象赋值，赋值后它们的引用相同，指向同一个对象</span>
+classNameObj2 <span class="token operator">=</span> classNameObj1；
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>这里展示的是最简化情形，让你先知道对象是怎么被创建出来的。实际上对象的创建不止这一种方法，通过new关键字创建对象也有着更复杂的情形，这些会在介绍完方法后，在构造器一节集中介绍。</p> <h3 id="对象-成员-的使用"><a href="#对象-成员-的使用" class="header-anchor">#</a> <strong>对象(成员)的使用</strong></h3> <p>通过点操作符<code>.</code>访问调用对象的成员。</p> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token comment">//获取、使用对象属性的几个例子</span>
+classNameObj<span class="token punctuation">.</span>field1<span class="token punctuation">;</span>
+<span class="token keyword">int</span> someName <span class="token operator">=</span> classNameObj<span class="token punctuation">.</span>field1<span class="token punctuation">;</span>
+<span class="token comment">//修改对象属性的几个例子</span>
+classNameObj<span class="token punctuation">.</span>field1 <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token number">3</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+classNameObj1<span class="token punctuation">.</span>field1 <span class="token operator">=</span> classNameObj2<span class="token punctuation">.</span>field1<span class="token punctuation">;</span>
+<span class="token comment">//调用对象方法</span>
+classNameObj<span class="token punctuation">.</span><span class="token function">method1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="方法"><a href="#方法" class="header-anchor">#</a> 方法</h3> <blockquote><p>有些语言叫函数，这里不作区分，将它们视为一回事儿。</p></blockquote> <blockquote><p>函数这个概念最早你应当是在数学中接触的：接收几个自变量，按照一定的规则，对变量运算，最后得到函数的值。数学中的函数强调的是一个数值集合于另一个集合的一种对应关系，从函数本身而言，是一种计算规则。</p> <p>编程中的函数也有这层意思，并且形式也和数学中的函数十分相似。但除此求值之外，编程中的函数还强调过程，函数除了最后返回一个值，函数的调用执行中，除了计算求出返回值，还可以存在很多不是求值、和计算无关的过程，它们只是单纯的执行某个操作，例如打开一个文件、发送一个网络请求、调用另一个函数、创建变量等等。</p> <p>编程中的函数还描述一段可执行过程，会产生一些副作用。</p></blockquote> <p>接收若干个参数、执行一段过程、返回一个结果值。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">TypeName</span> <span class="token function">fucntionName</span><span class="token punctuation">(</span><span class="token class-name">Param1Type</span> param1<span class="token punctuation">,</span> <span class="token class-name">Param2Type</span> param2<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token generics"><span class="token punctuation">&lt;</span><span class="token keyword">do</span> something<span class="token punctuation">&gt;</span></span>
+	<span class="token keyword">return</span> <span class="token generics"><span class="token punctuation">&lt;</span>value<span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>functionName就是函数的名字，标识这个函数，命名遵循前面的标识符命名。</p> <p>后面圆括号里的是函数的参数列表，有若干个，表示这个函数执行需要的上下文/数据。参数需要在前面声明类型，多个参数用逗号分隔。
+<br>函数体内可以根据名字拿到这些参数。
+<br>这些参数本质就是变量，是局部变量，和函数内声明定义的那种局部变量没什么区别，只能在局部作用域内访问到。</p> <p>花括号里是函数体，定义函数的执行过程，可以是任意语句：流程控制、(局部)变量创建、其他函数调用等等。</p> <p>关键字<code>return</code>标志着函数执行的结束，函数只要执行到return语句，不管后面还有什么内容，都会终止，返回结果。返回语句中value处可以是个值，也可以是个能求到值的表达式，总之最终得能得到一个用来返回的值。</p> <p>一开头的TypeName就是这个函数的类型，确切的说是函数返回值类型，即函数最终会返回个什么类型的值。</p> <p>函数可以什么都不返回，但Java是强类型语言，需要对这种返回类型进行标识，使用关键字<code>void</code>，这是一个特殊的类型，表示函数什么也不返回，只是执行一个过程。将void放在TypeName处。
+<br>显然void类型函数，返回语句里就没有值，直接为<code>return;</code>。
+<br>函数可以没有return语句，从头执行到尾自动就结束了，等效于<code>return;</code>什么都不返回。
+<br>void函数既然没有返回值，这种函数的调用，就没办法用于需要值的位置、求值表达式中，因为他都没有值，这种写法无法通过类型检查，会导致编译器报错。</p> <p>方法通过操作符<code>()</code>调用，即现通过其所属的对象用点操作符访问到它，然后在后面接小括号表示对方法的调用，形如：<code>objName.methodName();</code>。</p> <p>调用方法所需的参数写在括号内传入，有多个参数时参数顺序和声明方法是参数列表中的顺序一致，这个参数可以是任何能得到值的东西：字面量/直接的值、变量、求值表达式、对另一个能返回值的函数的调用。
+<br>方法声明时括号里的那个参数列表也称形式参数，简称形参；调用时括号里传入的这个参数称实际参数，简称实参。</p> <blockquote><p>不同于C++等语言，Java方法的参数不支持默认值，也就是说这个方法声明时参数列表里的参数有几个，调用时就要按照顺序，依次提供对应类型的参数值。</p></blockquote> <p><strong>隐式参数与显式参数 · this</strong></p> <p>方法名后面括号里的，在调用时传入的，是显式参数。</p> <p>方法是属于某一个类的，当我们通过对象调用一个方法时，方法可以访问到调用它的对象成员，这些是隐式参数。即在方法内可以直接使用其所属的类的所有成员(属性和方法)。</p> <p>这带来一个显而易见的问题，如果某个显式参数的名字，和方法所属类中的某个属性名字重名了，该怎么办？Java语法确实允许这样的命名。</p> <p>所以不光为了使语义更加明显，与方法内普通的局部变量有所区别；更为了不产生歧义，与显式参数有所区分。通过<code>this</code>关键字访问隐式参数。
+<br>this在方法中使用，用于指向正在调用方法的对象，即this就是调用对象本身。
+<br>和访问对象成员的方式一样，this自引用就是对象，后面接点操作符<code>.</code>，接要访问的成员。</p> <p><strong>方法(显式)参数的实质/函数参数的传递方式</strong></p> <p>调用方法时，将参数传递给方法，方法内使用这些参数的本质是什么？这里先介绍几个术语：<strong>按值调用</strong>(call by value)表示方法接收的是调用者/调用处传递的值本身；<strong>按引用调用</strong>(call by reference)表示方法接收的是调用者提供的变量(地址)；按名调用(call by name)，一个古老程序设计语言Algol用的是这种方式，不展开介绍。</p> <p>按值调用的本质，相当于在函数创建时，函数无法访问到实际传递的那个实参，函数的参数只是按照你声明的名字创建的一个局部变量，拷贝了实参的值。函数内对这个参数值的修改，并不会影响到调用函数时作为参数传入的那个变量。</p> <p>结合前面学过的语法，你会发现，如果只有按值调用这一种方式，如果方法希望和外界产生某种交互，确切的说是方法希望更改某些值时，只有通过隐式参数更改调用它的对象内部成员的值这一种途径。但有时候人们希望函数的手能伸的再长一些，可以更改任意从显式参数处传入的值。这就是按引用调用的作用：按引用调用将变量的引用地址传入，在函数内通过这个地址访问到变量本身，函数内外共用同一个变量，对参数的修改会直接反映到传入的实参上。这一语法被C++这类的语言所支持。</p> <p>Java只支持按值调用，也就是说方法得到的所有参数值都只是一个副本，方法不能修改传递给它的任何参数变量的内容。</p> <p><strong>递归</strong></p> <p>在一个方法内调用方法本身。在某种条件下循环进入调用方法自身的分支，另外的条件下进入别的分支，我们将这种方法循环调用自身的程序结构称为递归。</p> <p><strong>方法重载 overloading</strong></p> <p>对于某个方法调用时，我们希望视具体情形传入不同的参数列表，虽然传参情形不一样，但本质做的都是一件事儿，对应的方法内容可能只有略微调整。比如有时候希望在带参数的方法之外，提供一种不传递任何参数时的默认行为。重载就是用于解决这一类需求语法。</p> <blockquote><p>对这种情形，其实依旧可以通过一个确定的参数列表，然后在函数体内通过条件语句判断参数的值，甚至通过一些额外的冗余参数标识来实现，通过这种方式做出区分、对应函数的不同行为。但这样写语义不够明确，并且会产生许多冗余代码，降低可读性性。Java通过重载这一特性从语法层面以更简洁的方式解决这类问题。</p></blockquote> <p>重载是指多个方法有相同的名字，但参数列表不同。当调用方法时，编译器会自动根据传入的参数，匹配到对应的方法调用执行。</p> <p>如果没有任何一个重载与调用处的参数情形匹配，JVM就会考察：调用处的参数列表中的参数，能否通过类型转换，唯一地匹配到某个重载，如果这样可以，那也能找到可调用的方法。如果通过各种可能的类型转换，都没有与之匹配的重载，或者能找到多个转换后匹配的方案，则会报错，提示该类型没有与之匹配的方法。</p> <blockquote><p>名字相同说明它们做的是同一件事，不同的参数列表则是针对具体情形作出的细微变化。</p></blockquote> <blockquote><p>这里所说的参数列表，确切说指的是参数列表中各参数类型组成的有序类型列表，跟参数名字没关系。
+<br>参数名说白了只是一个给函数内部看、区分各个参数的符号，更侧重逻辑、语义方面的作用，就语法、编译器而言，两个参数列表中参数的类型、顺序一致，那在重载、签名这个语境下，他们就没有区别，是一样的。</p></blockquote> <p><strong>签名signature:</strong> 方法的名称与参数列表构成了方法签名，用于唯一标识、区分、完整描述一个方法。</p> <p>方法名直观标识了方法的用途，决定了大基调，而参数列表的不同决定了方法该用途下的具体执行细节。</p> <p>而返回值是方法的结果，并不能标识方法的唯一性，也就是说不能有两个名字和参数相同，但返回值类型不同的方法，这属于同一个方法的重复定义。</p> <p>可以在一个方法内，调用该方法其他签名的重载。</p> <h3 id="访问权限修饰符"><a href="#访问权限修饰符" class="header-anchor">#</a> 访问权限修饰符</h3> <p>在介绍访问权限之前，为了解为何要这样设计，我们现在理论的角度，讨论<strong>封装</strong>的优点：
+<br>封装指的就是他的字面意思：将类的一些实现细节、内部结构对外封闭起来，不允许外界访问、修改。确切地说是不对外暴露，外界不知其存在。我们把这种结构称作为外部透明。
+<br>（这种说法和平常语言习惯不符：我们平常说透明，指的是具体的事物本身和我们之间隔了一层透明的玻璃，没隔不透明的东西，具体的事物被看光了；计算机术语里的透明是说这个具体东西是透明的，外界观测感知不到）</p> <p>具体例如，最简单的封装，就是对类的某些成员属性，我们通过访问权限修饰符限制，限制为只有类自己的方法能访问，外界使用这个对象时，无法通过点操作符拿到这个属性，只能通过专门的方法来读取、修改。这样做有着诸多的好处：</p> <ol><li>我们将要修改、访问的这个值变成了一个抽象的概念。
+<br>当某一天由于其他地方的牵连，导致这个属性名称不得不改的时候，如果不做封装任由外界直接获取，这就意味着这个属性的所有调用处都要改名字，
+<br>当程序的规模大到一定程度，首先肯定是麻烦，其次是可能有遗漏，把该改的漏掉了，把不该改的同名的其他什么东西给改掉了。
+<br>而如果封装，我们就最大程度地将未来可能的变化限制在了自己写的这个类内部，名字变动的时候直接改这个方法实现，而所有方法调用处都不需要动。
+<br>进一步地，除了以这种方式兼容旧代码，还可以将这个方法约定废弃，新写一个起同样作用的方法用以匹配属性的变化，再次之后代码对该属性的访问全用新方法。从而逐步替换淘汰掉旧的。</li> <li>便于在修改属性值时做一些处理。
+<br>如果这个属性我们只希望被设置成特定取值范围的值，通过这种封装，可以在专门充作修改器的方法中进行校验；
+<br>再比如还是“1”中的情景下，属性名称变更后，我们希望进行一些新旧数据之间的转换处理，抑或是本身就需要在设置数据值之前进行预处理，使用这样的封装就十分便利。</li> <li>容易追踪变化与错误，类的设计不易遭到外界破坏。
+<br>如果将属性对外公开，直接从对象上访问，当这个属性被以意料之外的方式，或者说被以导致错误的方式使用、修改时，难以定位产生错误的位置。而如果使用专门的方法，只需要调试这个方法，就能更容易的发现、排查问题。</li></ol> <p>在上面这个情景中，将属性对外封装起来，用专门的方法进行读写时，专门用于读取某个属性的方法称作<strong>访问器</strong>，专门用于修改的方法称为<strong>修改器</strong>。也可以叫getter和setter。</p> <p>通过这种封装思想的最简单实践情形我们可以看到：
+<br>借助权限修饰符进行封装，能够使得代码之间尽可能的各司其职，不依赖对方；使得代码整体的结构更加干净，整齐。从而使程序更易维护、更可靠。
+<br>同时这种权限修饰符也兼具语义作用，让程序的目的一目了然，增强可读性。</p> <hr> <blockquote><p>访问修饰符的应用场景设计到了很多目前为止还没有介绍到的语法，不理解是正常的，知道有哪几种权限以及他们的差异、用法即可。对于不懂的概念看一眼就好了，等后面介绍到你就明白了。</p></blockquote> <p>访问修饰符可以用在除局部变量以外的绝大多数标识符上，<strong>添加在标识符前面</strong>，用来限制对应名称的可访问性。
+<br>都有：类、类的成员（属性、方法、构造方法、静态成员，只要是成员就都可以）、接口。</p> <p><strong>public：</strong>
+这个是最大的，哪儿都可以访问到，完全对外公开。（不过如果是别的包的名称，要先把这个包导入进来，毕竟包都没有的话连源文件都找不到。）</p> <p><strong>protected：</strong>
+最多只将成员暴露给与当前类的实现和运行时有关的、需要密切协作的类。具体包含两种情形：1.包内所有位置均可访问。2.继承链内可以访问，即类和它的子类能访问到（，同样的，子类和基类不在一个包时要先导入包。）这两种情形：继承的类自不必说，包内的类肯定是实现同一个功能模块才会把他们放在一个包里（语法没有这样要求，只是一般这么做）。
+<br>它侧重于将类成员的权限限制在其所属的功能块内，所以这个关键字只能限制类的成员，_不能用在类和接口_上。</p> <p><strong>default：</strong>
+什么都不写的默认值就是default。相较前者，权限收的更窄，只能在包内访问。</p> <p><strong>private：</strong>
+最严格的访问级别。完全对外隐藏，只有类内部（的方法）可以访问到。这种就适合修饰一些只与类本身的执行有关，和外界完全没有接触的成员。
+<br>显然这个东西也_不能修饰类和接口_，这俩要修饰成私有，别的类还怎么用，这个关键字只能修饰类的成员。</p> <table><thead><tr><th style="text-align:center;">修饰符</th> <th style="text-align:center;">被修饰者</th> <th style="text-align:center;">描述</th></tr></thead> <tbody><tr><td style="text-align:center;">public</td> <td style="text-align:center;">各种类、接口、类的成员</td> <td style="text-align:center;">任何位置可以访问</td></tr> <tr><td style="text-align:center;">protected</td> <td style="text-align:center;">各种类的成员</td> <td style="text-align:center;">包内或继承链上的子类</td></tr> <tr><td style="text-align:center;">无描述符/default</td> <td style="text-align:center;">各种类、接口、类的成员</td> <td style="text-align:center;">包内</td></tr> <tr><td style="text-align:center;">private</td> <td style="text-align:center;">各种类的成员</td> <td style="text-align:center;">类内</td></tr></tbody></table> <table><thead><tr><th style="text-align:center;">位置</th> <th style="text-align:center;">public</th> <th style="text-align:center;">protected</th> <th style="text-align:center;">default</th> <th style="text-align:center;">private</th></tr></thead> <tbody><tr><td style="text-align:center;">类内</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">可以</td></tr> <tr><td style="text-align:center;">类外包内</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">不可以</td></tr> <tr><td style="text-align:center;">包外子类</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">不可以</td> <td style="text-align:center;">不可以</td></tr> <tr><td style="text-align:center;">包外非子类</td> <td style="text-align:center;">可以</td> <td style="text-align:center;">不可以</td> <td style="text-align:center;">不可以</td> <td style="text-align:center;">不可以</td></tr></tbody></table> <h3 id="构造函数-构造器"><a href="#构造函数-构造器" class="header-anchor">#</a> 构造函数/构造器</h3> <blockquote><p>前面类的结构与对象创建中，只展示了最简单的对象创建情形，在介绍完函数和访问权限后，终于可以全面的介绍这一部分了。</p></blockquote> <p><strong>特点：</strong>
+构造函数本质依旧是一个函数，但他是一类特殊的函数：专门用于实现类的实例化/对象的创建，函数的名称和类名相同、没有也不需要声明返回值。</p> <p><strong>语法-使用构造器：</strong>
+使用new关键字后面跟对类的名字以及函数调用符号<code>()</code>将一个类实例化，这一过程调用的就是构造函数，返回的是新建实例对象的引用。这一基本语法前面已经提到，这里简单回顾。</p> <p><strong>没有返回值：</strong>
+构造函数没有返回值，是因为他会自动返回，返回当前类型的对象。
+<br>而函数体中代码的主要职能，就是具体化所返回的对象的值。
+<br>不过构造函数中也可以使用return语句，只不过没什么作用，只是执行到这个语句函数执行就结束罢了。</p> <p><strong>语法-编写构造器：</strong>
+构造函数的隐式参数，就是它在调用时所创建出来的对象，也就是说构造函数的this自引用指向它所将要创建的对象。你可以在这个函数中直接使用类的属性，它们对应的是该类创建对象时所新建对象的属性，通过修改它们的值，从而实现创建出具有制定值的对象。
+<br>可以在函数内直接通过名字获取访问对象属性，也可以通过this来访问。</p> <p><strong>构造函数重载：</strong>
+前面讲过函数重载，构造函数也可重载。你可以写出多个版本的构造函数，它们接收不同的参数列表，供不同的创建对象情形使用。
+<br>这些构造函数之间也可以相互调用，当它们的核心逻辑相同时，通过这种做法，将某一个构造函数作为其另一个重载的基础。
+<br>写法就是在一个构造函数里，通过<code>this();</code>调用另外某个重载，这是this关键字的另一个用法，他除了作为对象使用之外，作为方法使用时，效果就是调用构造函数。在构造函数中通过this调用其他重载时，不需要使用<code>new</code>关键字，也不需要接收返回值，直接调用即可。效果就是把另一个构造函数里通过this操作新对象成员的方法执行了一遍。
+<br>构造函数中调用其他构造函数只能调用一次，并且要在函数一开始的第一个语句调用。</p> <blockquote><p>上面说的是构造函数里通过this调用构造函数，但能不能直接用类名调构造函数，以及能否在普通方法中以this的方式调用构造函数，我没有试过，有待验证。</p></blockquote> <p><strong>构造函数也是函数，也能被前面提到的权限修饰符修饰。</strong> <br>不过一般而言，如果你正在写的类，是准备暴露给外界、让外部代码使用的一个类，那就应该暴露至少一个public构造函数，供外界调用，创建该类型对象。</p> <p><strong>默认字段初始化：</strong>
+如果构造器没有显式地，设置某个字段的值，那么就会自动将这个字段赋为对应类型的默认值，数值就是0，布尔就是false，对象/引用类型就是null。</p> <p><strong>无参数构造器：</strong>
+不包含任何参数的构造器，一般用于创建一个状态被设置为各种合适默认值的对象。
+<br>类至少要包含一个构造器，如果一个构造器都没有指定，编译器就会为这个类默认添加一个无参构造器，这个无参构造器内部不执行任何操作，即遵循上面提到的默认字段初始化创建一个对象。
+<br>但一旦你自己定义编写了构造器，编译器就不会自动添加这个无参构造器，如果你有需要的话就要自己写一个。不然构造对象时不提供参数就是不合法的。</p> <p><strong>显式字段初始化：</strong>
+除了在构造函数中指定类的实例字段初始值，还可以在类的定义中直接为类赋值。
+<br>写法和常见的赋值初始化语句没区别，就是在前面介绍的定义属性的语句后面加上赋值。
+<br>这个初始值可以不是字面量值，可以是求值表达式、返回该类型值的函数调用。
+<br>创建对象时，构造函数在执行之前，会先按照类中定义的这个字段的默认值，给字段赋值；没定义的再按照上面的默认字段初始化规则赋值；然后才是执行构造函数里的内容进行初始化，覆盖掉这些默认值。</p> <p><strong>初始化块：</strong>
+除了在构造器中与在声明中两种初始化对象字段的方式，还有第三种机制，名为初始化块。
+<br>在一个类的声明中，可以穿插在任意位置，包含任意数量的用花括号括起来的代码块，成为初始化块。
+<br>只要构造创建这个类的对象，这些个初始化块就会被按顺序执行。
+<br>初始化块的写法和构造器没什么不同，都是直接通过属性名设置值。然后除此之外也可以包含一些别的什么逻辑。（当然，构造器也可以这样，它本来就是函数，本来就只是一段可执行的过程而已，并不是说只能做设置属性值这一件事。）
+<br>初始化块的调用夹在字段默认值初始化与构造器之间。</p> <p><strong>总结，</strong>
+调用构造器创建对象的流程为：</p> <p>构造器第一行调用了其他构造器，进入该构造器，从头开始执行这套流程 ➡️</p> <p>默认字段初始化/根据数据类型取类型对应默认值 ➡️</p> <p>显式字段初始化 ➡️</p> <p>初始化块 ➡️</p> <p>构造器主体代码</p> <blockquote><p>代码风格</p> <p>编写构造器的时候，显然大多数情况参数和字段是直接对应的，直接将这个参数的值设置给对应属性。从语义上将，他们是一个东西，起一样的名字，但这样名字就冲突了，有歧义，作为局部变量的形参会覆盖掉隐式参数里的字段名。如何将它们区分开，下面有两种常见写法：</p> <p>1.用this指向创建的对应，通过this访问要设置的属性，和同名参数区分。</p> <p>2.给参数前面加个a。</p> <p>eg：</p> <div class="language-Java line-numbers-mode"><pre class="language-java"><code><span class="token class-name">Employee</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">,</span> <span class="token keyword">double</span> aSalary<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span> <span class="token comment">//第一种写法</span>
+	salary <span class="token operator">=</span> aSalary<span class="token punctuation">;</span> <span class="token comment">//第二种写法</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></blockquote> <h3 id="final实例字段"><a href="#final实例字段" class="header-anchor">#</a> final实例字段</h3> <p>上一章提到过，通过final关键字修饰变量，表示这个变量是一个常量，需要在声明时初始化。</p> <p>对于类中的属性，也可以使用final修饰，表示该字段是一个常量字段，值永远不会/允许改变。</p> <p>被final修饰的属性，必须确保在任何一个构造器执行后，该字段的值已经被设置(可以是上面提到的构造对象流程中的任意一个环节)，并且以后不能再修改对象的这个属性。</p> <h3 id="静态成员-类成员"><a href="#静态成员-类成员" class="header-anchor">#</a> 静态成员/类成员</h3> <p>类的属性在其每个对象中都存在一份，它们各自独立，只属于对象，多描述的是这个对象的状态。这是前面介绍过的。</p> <p>类中还有一类成员，它们只与这个类型本身有关，负责一些和类型本身的状态、行为有关的东西。它们不属于任何对象，只属于类，我们把这类成员称作静态成员。静态成员分为静态属性和静态方法。通过关键字<code>static</code>定义，加在属性或方法的标识符前。</p> <p><strong>静态属性：</strong></p> <ul><li>从语义/功能上讲，普通属性代表着对象实例的状态，属于对象实例，而静态属性代表着类本身的状态，属于类，只有一份，不属于任何对象，为所有的对象共有；</li> <li>从语法上讲，对象的存储空间里没有这个成员，通过对象调用的普通方法，其隐式参数里，也没有静态属性，无法直接访问到静态属性，要通过类来访问，具体语法格式很相似：<code>类名.静态属性名</code>。</li></ul> <blockquote><p>静态属性也能被final修饰，变成静态常量，这和前面讲的常量属性没有什么差别。</p></blockquote> <p>**静态方法：**不在对象上执行的方法。</p> <ul><li>从语义/功能上讲，静态方法描述的不是这类对象所具备的某种能力或行为，而是类型本身的一些行为、操作，不属于对象，只属于类。
+<br>除此之外，既然有了静态属性，如果某些操作/行为，只涉及这些静态属性，也理应有一个静态方法来专门操作它们；</li> <li>从语法上讲，无法通过对象直接调用静态方法，而是要通过类调用，具体语法格式很相似：<code>类名.静态方法名()</code>。
+<br>静态方法内部，则可以直接获取使用静态属性和静态方法，而不需要通过类名。同时它也不具备<code>this</code>引用，在静态方法内无法使用<code>this</code>、无法访问那些普通的、属于对象的成员属性以及成员方法。</li></ul> <p>两种典型的静态方法使用场景：</p> <ol><li>方法不需要访问对象状态，需要的所有参数都通过显式参数提供。</li> <li>方法只需要访问类的静态字段。</li></ol> <p>术语“静态”二字并没有什么特别的实际含义，只是沿用了C++的叫法，C++使用这个名字，有一些历史、设计上的原因。严谨来讲，我们应当称它们为类成员、类字段/类属性、类方法。</p> <p><strong>静态代码块：</strong>
+在代码块前加static关键字。</p> <p>前面介绍构造器的时候，提到过类的初始化块，用于在对象创建时执行、初始化对象。相对的，类也有它的初始化块，在代码块前面加上static关键字就是，只在类首次被加载载入虚拟机时执行一次。</p> <h3 id="总结-java中的变量种类"><a href="#总结-java中的变量种类" class="header-anchor">#</a> 总结：Java中的变量种类</h3> <p>至此Java中的三类变量形式已经先后登场：方法或代码块中的<strong>局部变量</strong>；保存对象属性的<strong>成员变量</strong>；与类本身有关的<strong>静态变量</strong>。</p> <h3 id="java程序的入口-main方法"><a href="#java程序的入口-main方法" class="header-anchor">#</a> Java程序的入口 —— main方法</h3> <p>前面第一章一开始有提到，Java程序的组织以类为基本单位，通过java命令运行某个类文件开始运行Java程序。类的运行，运行的是什么？属性和方法都是它的成员，它们只能被别的地方调用，没办法自动跑起来，所以就需要一个能在运行类时，执行一些流程，创建一些类、调用一些类成员的地方，以这个地方作为程序的开始，这就是main方法的作用。</p> <p>main方法它依旧是方法，和类方法没有本质区别：</p> <ul><li>它的名字特殊，方法名只能为main，方法名为main在Java中有特殊意义，表示这个方法是入口方法，需要在运行类时执行。</li> <li>它没有返回值，返回值类型为void。</li> <li>既然它是入口方法，显然它是和类型有关、属于类型而不属于对象的，所以它必须是静态static的。</li> <li>它的访问权限只能且必须被声明为public。（也不能不写，不写就默认成default了）</li> <li>它的参数是固定的，只能为<code>String[] args</code>，所以也没有重载。
+<br>main方法接收一个字符串类型数组（这是两个内置类型，后面会介绍），这既是main方法的参数，也是类的运行参数，运行这个类时，在指令后面依次附上若干个需要的启动参数数值，用空格分隔。它们会被作为字符串接收到这个数组，在函数中访问数组里对应位置的元素，即可获取启动参数的值。
+<br>ps：参数只是类型固定，参数名不非要是args，不过一般习惯用这个名字，它是arguments的缩写。</li> <li>也可以没有这个方法，不过这样就没有了JVM运行的入口，就无法从该类启动运行Java程序。</li></ul></div> <footer class="page-edit" style="margin:0;"><!----> <div class="last-updated"><span class="prefix">最近更新:</span> <span class="time">6/6/2024, 8:34:23 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/后端/Java/基础语法.html" class="prev">
+        基础语法
+      </a></span> <span class="next"><a href="/docs/后端/Java/Java程序的组织｜包.html">
+        Java程序的组织
+      </a>
+      →
+    </span></p></div></div></div>  <main class="footer"> <div class="copy-right"><a target="_blank" rel="noreferrer">
+          
+        </a></div></main></main> <aside class="page-sidebar"> <div class="page-side-toolbar"></div>  </aside></div><div class="global-ui"><!----><!----><!----><div></div></div></div>
+    <script src="/assets/js/app.8c86a408.js" defer></script><script src="/assets/js/4.5e4498eb.js" defer></script><script src="/assets/js/2.205724a6.js" defer></script><script src="/assets/js/37.41d7c30a.js" defer></script><script src="/assets/js/1.f4a8ed11.js" defer></script>
+  </body>
+</html>

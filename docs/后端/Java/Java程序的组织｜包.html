@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Java程序的组织 | 安得广厦千万间</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2675818a983a3131404cee835018f016";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    <meta name="description" content="我的博客，用于记录整理各类知识、想法、观点">
+    <meta property="article:modified_time" content="2024-05-24T09:02:31.000Z">
+    <meta property="og:site_name" content="安得广厦千万间">
+    <meta property="og:title" content="Java程序的组织">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://codefather.cn/docs/%E5%90%8E%E7%AB%AF/Java/Java%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%EF%BD%9C%E5%8C%85.html">
+    <meta name="twitter:title" content="Java程序的组织">
+    <meta name="twitter:url" content="https://codefather.cn/docs/%E5%90%8E%E7%AB%AF/Java/Java%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%BB%84%E7%BB%87%EF%BD%9C%E5%8C%85.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="程序员, 编程, 计算机, PC DIY, 客制化键盘">
+    <meta property="article:tag" content="程序员">
+    <meta name="keywords" content="编程学习路线, Java, 编程导航, 后端, 前端, 开发, 编程分享, 电脑DIY, ITX, 客制化键盘">
+    
+    <link rel="preload" href="/assets/css/0.styles.22c5eafc.css" as="style"><link rel="preload" href="/assets/js/app.8c86a408.js" as="script"><link rel="preload" href="/assets/js/4.5e4498eb.js" as="script"><link rel="preload" href="/assets/js/2.205724a6.js" as="script"><link rel="preload" href="/assets/js/34.abd4da33.js" as="script"><link rel="preload" href="/assets/js/1.f4a8ed11.js" as="script"><link rel="prefetch" href="/assets/js/12.d74be1ed.js"><link rel="prefetch" href="/assets/js/13.4c995e70.js"><link rel="prefetch" href="/assets/js/14.63954ce0.js"><link rel="prefetch" href="/assets/js/15.243e50da.js"><link rel="prefetch" href="/assets/js/16.71827017.js"><link rel="prefetch" href="/assets/js/17.9a37b696.js"><link rel="prefetch" href="/assets/js/18.bd9decd1.js"><link rel="prefetch" href="/assets/js/19.8acfe60a.js"><link rel="prefetch" href="/assets/js/20.7df0290c.js"><link rel="prefetch" href="/assets/js/21.81018fd8.js"><link rel="prefetch" href="/assets/js/22.ea2e38e8.js"><link rel="prefetch" href="/assets/js/23.1aabb380.js"><link rel="prefetch" href="/assets/js/24.7d0135c8.js"><link rel="prefetch" href="/assets/js/25.a53b28e5.js"><link rel="prefetch" href="/assets/js/26.a3da17c3.js"><link rel="prefetch" href="/assets/js/27.225d89a9.js"><link rel="prefetch" href="/assets/js/28.7af2808a.js"><link rel="prefetch" href="/assets/js/29.7b2bb3fc.js"><link rel="prefetch" href="/assets/js/3.97550155.js"><link rel="prefetch" href="/assets/js/30.dd081834.js"><link rel="prefetch" href="/assets/js/31.bfd4bd03.js"><link rel="prefetch" href="/assets/js/32.75d882a4.js"><link rel="prefetch" href="/assets/js/33.45d42bde.js"><link rel="prefetch" href="/assets/js/35.3420b88f.js"><link rel="prefetch" href="/assets/js/36.74db5f6a.js"><link rel="prefetch" href="/assets/js/37.41d7c30a.js"><link rel="prefetch" href="/assets/js/38.166c255b.js"><link rel="prefetch" href="/assets/js/39.b4ee3e3d.js"><link rel="prefetch" href="/assets/js/40.384d5478.js"><link rel="prefetch" href="/assets/js/5.d82f292c.js"><link rel="prefetch" href="/assets/js/6.ab76865b.js"><link rel="prefetch" href="/assets/js/7.51185879.js"><link rel="prefetch" href="/assets/js/8.9c1f91f4.js"><link rel="prefetch" href="/assets/js/9.aea7613d.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.82f3744c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.22c5eafc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="安得广厦千万间" class="logo"> <span class="site-name can-hide">安得广厦千万间</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基本功" class="dropdown-title"><span class="title">基本功</span> <span class="arrow down"></span></button> <button type="button" aria-label="基本功" class="mobile-dropdown-title"><span class="title">基本功</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机组成原理/" class="nav-link">
+  计算机组成原理
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/算法/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><h4>
+          基础工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Bash/" class="nav-link">
+  Bash
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Vim/" class="nav-link">
+  Vim
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/前端/HTML/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Axios/" class="nav-link">
+  Axios
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/工程化/" class="nav-link">
+  工程化
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React Native/" class="nav-link">
+  React Native
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Tailwind/" class="nav-link">
+  Tailwind
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/前端库/" class="nav-link">
+  前端库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/小程序/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/practicalExperience/" class="nav-link">
+  实战经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/后端/Java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/Spring/" class="nav-link">
+  Spring
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/DevOps/" class="nav-link">
+  DevOps
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="客制化键盘" class="dropdown-title"><span class="title">客制化键盘</span> <span class="arrow down"></span></button> <button type="button" aria-label="客制化键盘" class="mobile-dropdown-title"><span class="title">客制化键盘</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/科普扫盲/" class="nav-link">
+  科普扫盲
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/键帽/" class="nav-link">
+  键帽
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/套件/" class="nav-link">
+  套件
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/轴体/" class="nav-link">
+  轴体
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/配件周边/" class="nav-link">
+  配件周边
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="PC DIY" class="dropdown-title"><span class="title">PC DIY</span> <span class="arrow down"></span></button> <button type="button" aria-label="PC DIY" class="mobile-dropdown-title"><span class="title">PC DIY</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/PCDIY/综合/" class="nav-link">
+  综合
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/桌搭分享/" class="nav-link">
+  桌搭分享
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/CPU/" class="nav-link">
+  CPU
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/主板/" class="nav-link">
+  主板
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/内存/" class="nav-link">
+  内存
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显卡/" class="nav-link">
+  显卡
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/硬盘/" class="nav-link">
+  硬盘
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/散热/" class="nav-link">
+  散热
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/电源/" class="nav-link">
+  电源
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/机箱/" class="nav-link">
+  机箱
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/其他/" class="nav-link">
+  其他
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显示器/" class="nav-link">
+  显示器
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/ITX/" class="nav-link">
+  ITX
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/路由器/" class="nav-link">
+  路由器
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/nas/" class="nav-link">
+  NAS
+</a></div> <a href="https://github.com/wml107" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基本功" class="dropdown-title"><span class="title">基本功</span> <span class="arrow down"></span></button> <button type="button" aria-label="基本功" class="mobile-dropdown-title"><span class="title">基本功</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机组成原理/" class="nav-link">
+  计算机组成原理
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/操作系统/" class="nav-link">
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/计算机网络/" class="nav-link">
+  计算机网络
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/算法/" class="nav-link">
+  算法
+</a></li><li class="dropdown-item"><h4>
+          基础工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Linux/" class="nav-link">
+  Linux
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Bash/" class="nav-link">
+  Bash
+</a></li><li class="dropdown-subitem"><a href="/docs/基本功/基础工具/Vim/" class="nav-link">
+  Vim
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/前端/HTML/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/CSS/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/JavaScript/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/docs/基本功/数据结构/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Axios/" class="nav-link">
+  Axios
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/工程化/" class="nav-link">
+  工程化
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/React Native/" class="nav-link">
+  React Native
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/Tailwind/" class="nav-link">
+  Tailwind
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/前端库/" class="nav-link">
+  前端库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/小程序/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/docs/前端/practicalExperience/" class="nav-link">
+  实战经验
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><span class="title">后端</span> <span class="arrow down"></span></button> <button type="button" aria-label="后端" class="mobile-dropdown-title"><span class="title">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/后端/Java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/数据库/" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/docs/后端/Spring/" class="nav-link">
+  Spring
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/DevOps/" class="nav-link">
+  DevOps
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="客制化键盘" class="dropdown-title"><span class="title">客制化键盘</span> <span class="arrow down"></span></button> <button type="button" aria-label="客制化键盘" class="mobile-dropdown-title"><span class="title">客制化键盘</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/科普扫盲/" class="nav-link">
+  科普扫盲
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/键帽/" class="nav-link">
+  键帽
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/套件/" class="nav-link">
+  套件
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/轴体/" class="nav-link">
+  轴体
+</a></li><li class="dropdown-item"><!----> <a href="/docs/客制化键盘/配件周边/" class="nav-link">
+  配件周边
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="PC DIY" class="dropdown-title"><span class="title">PC DIY</span> <span class="arrow down"></span></button> <button type="button" aria-label="PC DIY" class="mobile-dropdown-title"><span class="title">PC DIY</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/PCDIY/综合/" class="nav-link">
+  综合
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/桌搭分享/" class="nav-link">
+  桌搭分享
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/CPU/" class="nav-link">
+  CPU
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/主板/" class="nav-link">
+  主板
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/内存/" class="nav-link">
+  内存
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显卡/" class="nav-link">
+  显卡
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/硬盘/" class="nav-link">
+  硬盘
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/散热/" class="nav-link">
+  散热
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/电源/" class="nav-link">
+  电源
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/机箱/" class="nav-link">
+  机箱
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/其他/" class="nav-link">
+  其他
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/显示器/" class="nav-link">
+  显示器
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/ITX/" class="nav-link">
+  ITX
+</a></li><li class="dropdown-item"><!----> <a href="/docs/PCDIY/路由器/" class="nav-link">
+  路由器
+</a></li></ul></div></div><div class="nav-item"><a href="/docs/nas/" class="nav-link">
+  NAS
+</a></div> <a href="https://github.com/wml107" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/docs/%E5%90%8E%E7%AB%AF/Java/" aria-current="page" class="sidebar-link">Java —— 引言与综述</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Java</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/后端/Java/基础语法.html" class="sidebar-link">基础语法</a></li><li><a href="/docs/后端/Java/面向对象.html" class="sidebar-link">面向对象</a></li><li><a href="/docs/后端/Java/Java程序的组织｜包.html" class="active sidebar-link">Java程序的组织</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#源文件、类、主类、包" class="sidebar-link">源文件、类、主类、包</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#包" class="sidebar-link">包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#包名" class="sidebar-link">包名</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#包的创建" class="sidebar-link">包的创建</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#包的导入-使用其他包中的类" class="sidebar-link">包的导入——使用其他包中的类</a></li></ul></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#classpath-类路径-其实叫包路径更贴切" class="sidebar-link">classpath 类路径（其实叫包路径更贴切）</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#jar文件" class="sidebar-link">JAR文件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#创建jar" class="sidebar-link">创建JAR</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#清单文件" class="sidebar-link">清单文件</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#可执行jar文件-jar文件的入口" class="sidebar-link">可执行JAR文件/JAR文件的入口</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#多版本jar文件-multi-release-jar" class="sidebar-link">多版本JAR文件（multi-release JAR）</a></li></ul></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#模块" class="sidebar-link">模块</a></li><li class="sidebar-sub-header"><a href="/docs/后端/Java/Java程序的组织｜包.html#总结" class="sidebar-link">总结</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="content"><div style="width:100%"><div class="theme-default-content custom-content content__default"><h1 id="java程序的组织"><a href="#java程序的组织" class="header-anchor">#</a> Java程序的组织</h1> <blockquote><p>第一章提到过，Java程序编写在<code>.java</code>文件中，称为源文件；第二章介绍了Java是由一个个类组成的。这一章主要介绍他们之间的关系、以及构成Java程序的多个类如何存放。</p></blockquote> <h2 id="源文件、类、主类、包"><a href="#源文件、类、主类、包" class="header-anchor">#</a> 源文件、类、主类、包</h2> <p><code>.java</code>源文件，是Java程序最基本的编译单元，将一个个代码文件编译为对应的<code>.class</code>文件后执行。</p> <p>类存放在源文件中，一个Java源文件内，只能有一个类型为public的公共类(也可以没有)，作为运行该源文件、通过该源文件启动程序时的的入口。这个类的名字，必须和源文件名相同。这个类称为该源文件的主类。</p> <p>一个Java源文件可以有很多个类，但最多只能有一个主类。不过一般而言，多数时候，都习惯用一个类对应一个源文件，文件名和类名相同。但也有很多时候：几个类关系非常紧密、构成从属关系时、与其他类再无瓜葛，也会在一个源文件放多个类。</p> <p>在类之上还有包，Java使用包将类组织在一个集合中，借助包来方便地组织代码，将自己的代码与别人提供的代码库、将负责某一个功能的代码与负责其他工作的代码分开管理。</p> <h2 id="包"><a href="#包" class="header-anchor">#</a> 包</h2> <h3 id="包名"><a href="#包名" class="header-anchor">#</a> 包名</h3> <p>除了从语义上将不同功能的代码划分，使用包的另一主要原因是确保类名的唯一性。</p> <p>不同的代码编写者可能建立了同样名字的类，毕竟他们各自的所实现的功能可能都包含某一类服务该功能的类，名字是很容易重复的。</p> <p>将类放置在不同的包里，就能解决这一冲突。包起到了分隔命名空间的作用。</p> <p>不过显然，包的名称，和包内类的名称，都需要保持唯一性。为了保证包名的绝对唯一性，通常用一个英特网域名的逆序形式作为包名。</p> <ul><li>从大到小：固定的前缀<code>com</code>➡️组织名➡️组织内细分名称➡️工程名➡️工程内细分功能模块名。</li> <li>用英文句号<code>.</code>将每一层级分开。</li> <li>类的名字首字母大写，而包名的首字母都小写。对于多个单词，一般也采用驼峰命名。</li> <li>例如：<code>com.wml.demo</code>。</li></ul> <p>如果把类放在包里，用包名作为这个类的前缀，例如<code>com.wml.demo.Util</code>，这个名字就是类的<strong>完全限定名</strong>。</p> <h3 id="包的创建"><a href="#包的创建" class="header-anchor">#</a> 包的创建</h3> <ul><li><p><strong>与文件目录映射</strong></p> <p>Java中包的组织结构，和文件系统中目录的结构是一样的。</p> <p>包是通过文件夹来建立的，或者说文件夹为包的载体，一个文件夹就是一个包，文件夹内包含多个Java源文件，文件夹内这些源文件、源文件中的类都属于这个包。</p> <p>包名是多个层级用句号分隔组成的，每个层级对应一个文件夹，即每一层都相当于是一个包。</p> <p>也就是说包是可以嵌套的，每一层文件夹的名字，就是这一层级的名字。从根位置到当前位置，每一层文件夹名字组成了当前这个文件夹包的包名。</p> <p>包虽然可以嵌套，但嵌套的包之间不存在任何（从属）关系，它们各是各的层级，没有任何联系，不存在某个包属于另一个包、是另外一个包的子包这种说法。
+<br>也不存在访问权限上的从属，名称的访问权限只按照上一章访问权限修饰符中介绍的规则来划分。
+<br>例如<code>java.util</code>与<code>java.util.jar</code>两个包毫无联系，每个包都是一个独立的类集合。</p></li> <li><p><strong>声明包</strong></p> <p>上面只是必要条件，也就是说放在类对应目录下也不简单属于这个包，但如果属于这个包，就必须放在这个位置，因为Java查找类的时候是根据这个查找的。</p> <p>除了放在正确的位置，还要在源文件的第一行最开始，声明它所属的包，语法为<code>package 包名;</code>。</p> <p>如果没有这个语句，源文件里的类就属于一个默认的<strong>无名包</strong>。</p></li></ul> <h3 id="包的导入-使用其他包中的类"><a href="#包的导入-使用其他包中的类" class="header-anchor">#</a> 包的导入——使用其他包中的类</h3> <p>前面访问权限修饰符介绍过，一个类可以使用它所属包中的所有其他类，以及其他包中的公共类。</p> <p>在一个类中访问另一个包中的public类有两种方法：</p> <p>1.使用该类的完全限定名，即<code>包名.类名</code>。</p> <p>2.但这样比较繁琐，更简单常用的方式是使用import语句。</p> <p>语法为：<code>import 包名.*;</code>。该语句表示导入这个包下的所有公共类，这之后可以直接使用相应类名。</p> <ul><li>import语句必须放在源文件的一开始，在开始的位置导入所有需要的类，不能穿插别的代码。</li> <li>前面提到过，以另一个包名为前缀的包，它们之间没有任何关系，导入也是同理，上面的语句只是导入这个包自己的类，并不会导入以该名字为前缀的其他包内的类。</li> <li>还可以通过语句<code>import 包名.类名;</code>，明确地只导入专门的类。</li> <li>几个包导入的类中存在同名类时：
+<ul><li>在类名前面加上包名来使用，通过类的完全限定名来区分。</li> <li>也可以通过在导入的类名后面加<code>as 别名</code>，通过使用别名区分。</li></ul></li></ul> <blockquote><p>前面讲到过，Java源文件只能有一个和文件名相同的公共类，而导入其他包的类的时候也只能导入公共类，所以非常巧，导入类时的这个名字，恰好也是源文件的名字，像是导入了这个源文件一样（但其实不是，这个文件内的其他非公共类并不能使用）。</p></blockquote> <p><strong>静态导入：</strong>
+除了上面三种方式，还有一种import语句，用于导入某个类的全部静态成员，语法为：<code>import static 包名.类名.*;</code>，这样可以导入这个类下的全部公共成员，能够直接使用它们的名字。
+<br>除此之外，也可以专门导入某个特定的静态成员，语法和前面相似。</p> <h2 id="classpath-类路径-其实叫包路径更贴切"><a href="#classpath-类路径-其实叫包路径更贴切" class="header-anchor">#</a> classpath 类路径（其实叫包路径更贴切）</h2> <p><strong>基本概念：</strong></p> <p>上面讲的是通过包来唯一确定类、如何在包中定位类，那么要怎么定位包呢？</p> <p>通过指定类路径，来告诉JVM，运行一个Java程序时，在什么位置找到包含着类的包。</p> <p><strong>指定classpath的方式有两种：</strong></p> <ul><li>通过java或javac命令运行Java程序时，通过-classpath选项来指定类路径，语法为在命令后添加选项<code>-classpath 类路径</code>。</li> <li>在操作系统设置全局变量。全局变量的概念第一章有提到过，具体设置方式Window系统和UNIX系统有差异，可自行搜索。</li></ul> <blockquote><p>一般采用后者，为所有Java程序，设定一个通用的、永久不变的classpath不是一个好的做法，因为人们经常会忘记全局设置。</p> <p>在每次调用命令时，通过选项设置classpath更优。但这样做比较麻烦，最佳实践是：将每个需要设置类路径的Java程序的那个很长的编译、运行指令，存放在一个shell脚本或者批处理文件中，每次直接运行这个脚本。</p></blockquote> <p><strong>寻找某个类的过程：</strong></p> <p>当你编译或运行Java程序时，如果是Java API提供的类，则不需要任何classpath就能直接使用；
+<br>如果在运行命令时指定类classpath，就会按照你指定的路径挨个寻找包、寻找包中的匹配名字的类；
+<br>如果没有指定选择，则会去系统全局变量中找，按照全局变量配置的classpath来搜寻类。</p> <p>Java开发环境在寻找类时，总会先去java.lang寻找。这个包是默认导入，默认导入到了所有源文件，无需导入可以直接使用。然后再去根据你所声明的导入，按照上面的规则去搜索类。</p> <p><strong>完全限定类名必须唯一：</strong></p> <p>根据classpath搜索类时，会在每一个路径下，都按照包路径去查找一遍，尽管在某个路径下已经找到了。如果找到一个以上的类，就会报错，因为完全限定类名必须为一。不能存在两个一样的包装着一样的类。</p> <p><strong>classpath的格式/语法：</strong></p> <ul><li>类路径可以有多个，Windows环境中用分号<code>;</code>分隔，UNIX环境用冒号<code>:</code></li> <li>句点<code>.</code>表示的是当前所在位置/目录。它可以单独作为路径加入classpath表示运行指令时所在的当前路径，例如：<code>/home/userX/dir1:.:/home/userY/dir3</code>，这里面包含了三个路径，中间那个就是表示当前位置的相对路径。当前目录是需要显式指定的：
+<ul><li>如果进行编译指令，编译器会自动把当前执行命令时的所在目录也纳入类路径，自动去当前目录下搜索包。</li> <li>但对于运行Java程序的指令，如果你没有显式指定当前目录，又使用了当前目录下某个包的类，Java解释器是不会自动搜寻的，会因找不到这个类而报错。</li></ul></li></ul> <p>classpath所指定的是包树状结构的基目录：即类路径是存包的，而不是包的根目录，包的根目录是放在classpath这个路径对应的目录里面的。</p> <h2 id="jar文件"><a href="#jar文件" class="header-anchor">#</a> JAR文件</h2> <blockquote><p>根据前面所介绍的，通过包来组织Java程序，然后一个个包实际上就是一个个文件夹，使用者把这些文件夹存放在合适的位置之后，配置classpath，然后编译、运行程序。</p> <p>在这样的工作流中，当时人们存在这样一个需求：希望将这些程序作为一个整体对使用者/外部发布，并且优化传输效率/压缩体积。</p> <p>JAR就是为了解决这一需求产生的：只向用户提供一个单独的文件，而不是一个包含大量类文件的目录结构。</p> <p>除此之外，它的使用还有利于版本控制，可以包含有关它内部文件的一些信息，以及厂商、版本等信息。</p></blockquote> <p>全称Java Archive，Java归档文件。它的本质是一个ZIP压缩文件：</p> <ul><li>就是把你用来创建包的文件夹通过ZIP压缩格式压缩；</li> <li>这里面既可以包含类文件，也可以有图像、影音等文件；</li> <li>然后附上这个包的一些描述信息（一个manifest的清单文件，也可以没有）；</li> <li>最后把压缩文件后缀设置为<code>.jar</code>。</li></ul> <p><strong>用途上，依旧是Java包：</strong>
+通过压缩并加上jar后缀之后，Java的一些工具，就能够将其识别为jar文件，从而进行相关操作。因为它的本质就是对Java程序包的压缩，所以使用起来和Java包是一样的，怎么通过classpath使用包的，就用同样的方式使用JAR文件，Java环境里的工具会自动识别并拿到压缩文档里的内容。</p> <ul><li>配置classpath的时候，路径可以直接指向JAR文件。</li> <li>除此之外还可以指向一个目录下的所有文件，通过<code>/*</code>表示，意味这个目录下的全部JAR文件。注意UNIX系统的“*”需要转义，防止扩展。</li></ul> <p><strong>可以直接打包源文件，也可以是目标文件：</strong>
+包的话一般都是<code>.java</code>源代码，不过JAR文件里是什么都行，你可以是直接打包源文件，也可以把代码都编译好了再打包，具体看使用习惯。反正用这个包的人，都要有编译这一步，他的代码要是引用了这个包的内容，没编译会跟着一起编译的。</p> <h3 id="创建jar"><a href="#创建jar" class="header-anchor">#</a> 创建JAR</h3> <p>因为它的本质就是ZIP，所以你既可以用Java环境中的工具，通过命令来基于一个文件夹创建JAR；也可以给一个文件夹加上manifest描述文件(如果有需要的话)后，直接压缩成ZIP文件，然后把后缀改成jar。这两者的效果是一样的。下面主要介绍怎么通过命令创建。</p> <p>使用jar工具创建JAR文件，在默认的JDK安装中，位于jdk/bin目录下。<strong>命令的格式</strong>是：<code>jar option jarFileName params1 params2 ...</code>。</p> <p>jarFileName是要生成或操作(这取决于option中的操作)的JAR文件名；option是一个组合式命令，风格类似于UNIX tar 命令。</p> <p>这是一个用于创建和解压缩归档文件的命令行工具，广泛用于 Linux 和 Unix 系统。将一系列的操作，拆分抽象成一些最基本的命令单元，使用这些命令单元的字母代号，通过将它们拼接在一起，来表达一个操作。然后在这个命令组合的后面就是一些列参数，这些参数的顺序很乱，几乎和前面的选项没什么对应关系而言，这个关系具体是怎样的，看下面的例子吧。参数的顺序没规则可言，反正选项的组合就那么几种，参数的顺序你可以背下来，也可以忘了去搜。</p> <p>jar命令大致上遵循了这个格式，搞清楚了命令代码的含义，就清楚了如何使用jar，下面的对照表，就是对各个选项的说明，这些选项理解起来可能会很晦涩，所以在后面附带了几个例子。</p> <table><thead><tr><th style="text-align:center;">选项</th> <th>说明</th></tr></thead> <tbody><tr><td style="text-align:center;">c</td> <td>创建JAR</td></tr> <tr><td style="text-align:center;">t</td> <td>显示JAR中的内容列表</td></tr> <tr><td style="text-align:center;">x</td> <td>解压jar，恢复成文件夹</td></tr> <tr><td style="text-align:center;">u</td> <td>向JAR包里追加文件</td></tr> <tr><td style="text-align:center;">v</td> <td>生成操作报告，输出到标准设备（例如你敲命令的控制台）</td></tr> <tr><td style="text-align:center;">m</td> <td>指定manifest.mf文件（前文提到过，就是一个描述JAR的文件，后面会展开解释）</td></tr> <tr><td style="text-align:center;">M</td> <td>创建时不产生manifest.mf文件</td></tr> <tr><td style="text-align:center;">0</td> <td>只是单纯的创建JAR，但不压缩。（是数字不是字母O）</td></tr> <tr><td style="text-align:center;">i</td> <td>建立索引文件</td></tr> <tr><td style="text-align:center;">f</td> <td>指定JAR的文件名，文件名作为第二个参数(第一个参数是这些命令选项的组合)。如果不加这个指令参数，如果是创建JAR，就会自行拟定一个名称，将结果写至标准输出；如果是解压或者读取，就会提示并通过标准输入读取，让你补一个。</td></tr> <tr><td style="text-align:center;">e</td> <td>指定JAR的主类/入口文件，这一点下面会详细展开。</td></tr> <tr><td style="text-align:center;">C</td> <td>改变执行当前指令的位置，在指定的路径下执行指令。</td></tr></tbody></table> <p>这些个命令里，ctxu是必须且只能选一个的（因为互斥），剩下的选项是可选选项。ctxu决定了指令的大方向、主要做什么，可选项多是描述要怎么做、是否需要施加一些额外影响。</p> <ol><li><p>示例一：创建一个最简单的JAR文件</p> <p><code>jar cvf MyApp.jar *.class</code></p> <p>这将把当前位置下的所有 .class 文件打包到名为 MyApp.jar 的 JAR 文件中。</p> <p>这其中MyApp.jar就是选项f对应的参数。后面要打包内容的路径就是选项c的参数。</p> <p>参数顺序没和选项顺序一致：前面f的说明讲过，包名这个参数必须位于第二位，在所有其他参数前。</p> <p>可以看到，要打包的文件路径可以包含通配符。</p></li> <li><p>**注意：jar打包是会包含后面给出要打包文件的目录结构的。**示例二：比如你只是要打包目录code下名为comX和comY的两个包，不想要code这个目录。但如果你执行的代码是<code>jar cvf Demo.jar code/*</code>，最终得到的JAR文件会把目录结构也加进去，JAR进去里面先是code，再进去才的这两个包。</p> <p>所以为了避免这种结果，你就得先把命令行的位置切到code目录下，
+<br>或者⬇️下面例十里的<code>-C</code>选项的作用之一，就是解决这样的问题。</p></li> <li><p>示例三：显示JAR包内容列表</p> <p><code>jar tvf hello.jar</code></p> <p>这将显示 hello.jar 包中的文件列表。</p></li> <li><p>示例四：解压JAR包</p> <p><code>jar xvf hello.jar</code></p> <p>解压该包到当前目录。</p></li> <li><p>示例五：向 JAR 包中添加文件</p> <p><code>jar uf hello.jar HelloWorld.java</code></p> <p>命令将 HelloWorld.java 添加到 hello.jar 包中。</p></li> <li><p>示例六：<strong>JAR包内可以不只有一层，内部可以是一个目录</strong>。将文件追加到JAR的特定层级。</p> <p>就是说，你可以把一个多层嵌套的目录（也对应着多个包）打包成一个JAR文件，目录的层级依然存在，这里面依旧是多个包，你甚至还可以把存放着多个包的根目录的位置，按照示例一里那样通配符的方式，将多个包打包进一个JAR里。</p> <p>示例四中是往JAR里追加文件的最简形式，直接放在了JAR内第一层目录下。如果你希望将某个文件追加到JAR某一层的话，有两种方法：</p> <ul><li><p>先解包，放进去之后再重新生成JAR。</p></li> <li><p>追加这个文件时，文件路径中，文件的名字前面加上包名。例如：<code>jar uf hello.jar com.mycompany.mypkg.HelloWorld</code>，追加文件的时候就会先按照路径找到文件，然后再按照包的名称从JAR中找到对应层级，加入这个文件。</p> <blockquote><p>这个写法的正确性存疑，我也是在网上看到的，不确定。我的疑惑在于，那我要追加的文件不是类怎么办，我如果想追加class或者图片之类的呢？</p></blockquote></li></ul></li> <li><p>示例七：创建带有 manifest.mf 文件的 JAR包。</p> <p><code>jar cvfm hello.jar MANIFEST.MF hello</code></p> <p>在 JAR 包中生成一个 META-INF 目录，其中包含一个MANIFEST.MF文件。有关这个目录和文件，后文会展开说明。</p> <p>m是指定一个描述文件，M是不指定，也就是说你这俩都不写的情况下，也会默认生成一个描述文件。</p> <p>选项m的用途是专门指定一个你自己写的文件来充当。并且当然，你自己写的这个描述文件不非要叫manifest.mf，可以是别的什么mf，不然这后面也就不需要一个专门的参数来标识你所指定的这个文件了。你可以随便写，但jar只认manifest，最终生成的JAR里，描述文件的名字都会是manifest，不过取了你指定文件里的内容。</p> <p>需要注意这里参数的顺序，顺序很乱，和前面选项是对应不上的。</p></li> <li><p>示例八：为已有的manifest文件追加内容</p> <p><code>jar ufm MyArchive.jar mfAdditions.mf</code></p> <p>只需要把要追加的内容写在这个文件里，jar命令就会自动提取追加在旧文件内容的后面。</p> <p>所以如果你是希望修改就描述文件，就得解包修改再生成，或者重新指定了。</p></li> <li><p>示例九：为 JAR 文件创建索引列表</p> <p><code>jar i hello.jar</code></p> <p>为指定的 JAR 文件生成索引文件，在 JAR包的 META-INF 文件夹下生成一个名为 INDEX.LIST 的索引文件。这样能在JAR内文件比较多时候，方便文件检索。</p> <p>上面示例可以看到：这个选项能单独使用。</p></li> <li><p>示例十：改变命令执行的位置。</p> <p><code>jar cvfm -C hello/ hello.jar mymanifest.mf</code></p> <p>这个命令的效果就是基于当前所在的相对位置，找到当前位置的hello目录进入，然后在这个位置执行创建JAR的命令。</p></li></ol> <h3 id="清单文件"><a href="#清单文件" class="header-anchor">#</a> 清单文件</h3> <p>除了类、图像和其他资源外，JAR文件还可以包含一个其特有的清单文件，用来描述归档文件的特殊特性。</p> <p>位于JAR内一个特殊的META-INFO子目录中。</p> <p>符合标准的最简清单文件只有一行：
+<code>Manifest-Version: 1.0</code>，描述了JAR的版本信息。</p> <p>复杂的清单文件可以包含更多条目，这些条目通过空行被分为许多节，第一节称为主节，描述作用于整个JAR文件。随后的条目用来指定包内各命名实体的属性，例如某个文件、包或者URL，每个条目必须以NAME开始，冒号后要有一个空格，然后实体的名称，换行后写对该实体的描述，描述不能主动换行。</p> <p>注意：空格、换行都不能少也不能多。1.NAME:后有且只能有一个空格；2.节与节之间用空行分隔；3.描述和Name之间要换行；4.不能有多余的空格；5.描述文件必须以换行符结尾，即在最后一行敲个回车，换到一个空行。</p> <p>示例：</p> <div class="language-MANIFEST line-numbers-mode"><pre class="language-text"><code>Manifest-Version: 1.0
+lines describing this archive
+
+Name: Test.class
+lines describing this file
+Name: com/mycompany/mypkg/
+lines describing this pkg
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>清单文件里还能写很多别的内容，这是些最基本的，具体可以查阅官方文档了解。</p> <h3 id="可执行jar文件-jar文件的入口"><a href="#可执行jar文件-jar文件的入口" class="header-anchor">#</a> 可执行JAR文件/JAR文件的入口</h3> <p>前面讲类的时候，说类需要一个用于执行时的入口，JAR文件也是可以被执行的，需要为他指定一个执行时的入口类。这样一来运行该JAR文件时，入口类的入口——main方法会被执行。</p> <p><strong>设置入口的两种方式：</strong></p> <ul><li><p>通过选项e指定，后面参数要跟这个类的名字（完全限定名）。<br>e选项可以与多个选项组合，既可以是创建JAR时指定入口，也可以是追加一个文件同时将其设置为入口。</p></li> <li><p>通过在清单文件的主节内包含条目<code>Main-Class:</code>。</p> <blockquote><p>注意这个主类的名字不要加扩展名<code>.class</code>。</p></blockquote></li></ul> <p><strong>执行JAR的两种方式：</strong></p> <ul><li><p>对于配置了入口的JAR文件，可以通过命令<code>java -jar ArchiveName.jar</code>来启动。</p></li> <li><p>Windows系统中为.jar后缀的文件创建了关联后可以直接点击运行，MacOS则可以直接点击运行。</p> <blockquote><p>Windows平台中还可以使用第三方包装器工具，将jar转换为Windows可执行文件，例如Launch4J和IzPack。</p></blockquote></li></ul> <h3 id="多版本jar文件-multi-release-jar"><a href="#多版本jar文件-multi-release-jar" class="header-anchor">#</a> 多版本JAR文件（multi-release JAR）</h3> <p><strong>背景：</strong>
+思考这样一种情形，你的代码从Java8版本迁移到Java9，代码中用到了一个Java8的某个内部类，在Java9被移除、替换为了别的类，这种情况下你就需要更改代码。但问题是使用你代码的人又可能使用Java8环境，也用可能是9。多版本JAR文件就是用于这种情况，力图在只提供一个版本的JAR文件的情况下，向后兼容多个版本的JDK。</p> <p><strong>注意：</strong>
+这一特性的唯一目的你某个特定版本的程序或库能在多个不同版本的JDK上运行，如果你增加了个新的功能、改变了API，就是一个全新的版本，应当提供一个新版本的JAR。</p> <p><strong>创建多版本JAR文件：</strong>
+创建的方式和你创建普通JAR基本一致。首先编写的时候，编写多个JDK版本的程序或库，把适用于多个版本的JDK的包分别存放在不同的目录、编译。然后对他们打包，在之前创建JAR命令的基础上，在命令的后面加上<code>--release</code>标志，这个标志就是用于标识某个特定版本的，后面跟两个参数，第一个参数是要兼容的JDK版本号，第二个参数就是所适配该版本的用于制作JAR的包的路径。因为两个版本的包放在了不同的路径，所以还要用<code>-C</code>选项支出包所在的位置。</p> <p>例：
+<br>项目为demo，项目分别有两个版本，一个是默认的Java8，以及特别适配的Java9。将本来的代码书写编译到demo/bin/8/com/mycompany/mypkg/Test.class，那么为Java9适配的代码就是改动并编译后放在demo/bin/9/com/mycompany/mypkg/Test.class。
+<br>在demo这一级输入命令<code>jar cf Demo.jar -C bin/8 . --release 9 -C bin/9 .</code>。
+<br>这一命令的前半部分和前文介绍的创建JAR命令是一致的，就是将路径切换到./bin/8下，取这里面的文件生成名为Demo.jar的文件。
+<br>命令后半部分的含义是再把路径切到./bin/9下面取里面的所有文件，将其作为用于适配Java9的内容加入JAR文件。</p> <p><strong>实现机制/效果：</strong>
+这种用来保证向后兼容的操作，是通过META-INFO中的额外文件实现的，执行上面那样的创建操作，jar首先会在MANIFEST.MF描述文件的主节中加入条目<code>Multi-release: true</code>，同时自动在JAR包的META-INFO下面加入你指定用于向后兼容的文件。
+<br>它会自动比对，把和默认版本不同的地方的文件，放到这个位置。具体的结构是在这个目录下面创建一个名为versions的文件夹，再在这个文件夹下创建名为你所指定的JDK版本号的目录，把为这个版本特别适配的文件放在这里面。</p> <p>按照上面的例子，打包过后的META-INFO目录下的内容长这样：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>META-INFO
+｜- MANIFEST.MF (with line Multi-release: true)
+｜- versions
+	｜- 9
+		｜-Test.class
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>使用：</strong>
+这种JAR文件的使用和前面没什么不同，该怎么用怎么用就好了，它会根据俄调用处的JDK环境自动适配。比如说这个JAR包为Java9做了向后兼容，那么JVM就会去匹配，看有没有与环境版本匹配的兼容版本，要是没有就直接按照默认的包执行了，要是有则会用对应版本的内容替换掉默认的。</p> <blockquote><p>但反编译工具javap命令并不能处理多版本文件，如果你调用这个命令反编译JAR内的某个class文件，最终得到的java文件只会是基础版本的。要是你想查看更新兼容版本的源代码，则需要指示路径，指示寻找这个高版本兼容文件的路径。</p> <p>例如：<code>javap -classpath MyProject.jar\!/META-INF/versions/9/Test.class</code>。
+<br>相当于是直接指定类要反编译文件的路径了，这个例子是我在Java Core书上看到的，我其实并不理解这里面<code>\!</code>是干嘛的，网上啥信息都找不到，我猜是用于分隔包路径和类路径的，前半部分是classpath找包的，后面是指定包内类位置的。</p> <p>但其实更好的做法是直接用jad工具，是一个功能更强大且易于使用的反编译工具，支持多版本 JAR 文件的反编译。</p></blockquote> <p><strong>在编译时，编译为用于打包的指定JDK版本的目标文件：</strong>
+编译的时候也可以用前面的那个<code>--release</code>标识来指定要编译的版本，还是在这个标志后面加版本号。用<code>-d</code>指示编译后的输出目录（，目录如果不存在会先创建再输出）。例如：<code>javac -d bin/8 --release 8 要编译的内容</code>，这样对应的代码就会被编译为适用于JDK8版本的目标文件，输出到目录./bin/8。</p> <p><strong>追加文件和创建JAR是同样的写法：</strong>
+还是用前文介绍的那种命令给JAR包追加文件，要追加的文件如果是用于某个特定向后兼容版本的，还是在这个文件前添加选项<code>-release 目标版本</code>。</p> <p><strong>追加新的兼容版本：</strong>
+如果你创建的时候，只做了Java9的向后兼容，之后又想加个Java11的，那么因为已经有了JAR文件，用来兼容Java11的这些新文件理应属于追加文件的范畴，所以也是用上面的操作。
+<br>当然，你还可以先解包，然后重新打包。</p> <h2 id="模块"><a href="#模块" class="header-anchor">#</a> 模块</h2> <p>在包的上面还有模块，这部分内容将在后面介绍。</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>按照级别由小到大，Java程序是这样组成的：</p> <p>语句 -&gt;</p> <p>类（包含属性、代码块、入口）-&gt;</p> <p>包（内部可能还会嵌套若干个不构成所属关系的其他包） -&gt;</p> <p>JAR（本质也是包、有入口）-&gt;</p> <p>模块</p></div> <footer class="page-edit" style="margin:0;"><!----> <div class="last-updated"><span class="prefix">最近更新:</span> <span class="time">5/24/2024, 9:02:31 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/后端/Java/面向对象.html" class="prev">
+        面向对象
+      </a></span> <!----></p></div></div></div>  <main class="footer"> <div class="copy-right"><a target="_blank" rel="noreferrer">
+          
+        </a></div></main></main> <aside class="page-sidebar"> <div class="page-side-toolbar"></div>  </aside></div><div class="global-ui"><!----><!----><!----><div></div></div></div>
+    <script src="/assets/js/app.8c86a408.js" defer></script><script src="/assets/js/4.5e4498eb.js" defer></script><script src="/assets/js/2.205724a6.js" defer></script><script src="/assets/js/34.abd4da33.js" defer></script><script src="/assets/js/1.f4a8ed11.js" defer></script>
+  </body>
+</html>
